@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "BGNameScreen.jpg",
+      "filename" : "BGCalculusScreen.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "DBGNameScreen.jpg",
+      "filename" : "DBGCalculusScreen.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },

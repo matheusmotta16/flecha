@@ -9,14 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        ZStack {
-            
-            MainButton()
-           
-            VStack{
-                miniLogo()
-                Spacer()
+        NavigationStack {
+            ZStack {
+                Image("BGMainScreen")
+                    .resizable()
+                    .ignoresSafeArea()
+                ZStack {
+                    
+                    MainButton()
+                }
+                
+                VStack {
+                    HStack (spacing: 280){
+                        NavigationLink{
+                            NameScreen()
+                        } label: {
+                            miniLogo()
+                        }
+                        
+                        NavigationLink{
+                            FavoriteView()
+                        } label: {
+                            brushButton()
+                        }
+                    }
+                    Spacer()
+                }
+                
             }
         }
     }
