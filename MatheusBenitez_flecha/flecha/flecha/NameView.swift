@@ -10,6 +10,7 @@ import SwiftUI
 struct NameScreen: View {
     
     @State var title = ""
+    @State private var name: String = ""
     
     var body: some View {
         NavigationStack{
@@ -36,10 +37,15 @@ struct NameScreen: View {
                             .foregroundStyle(.azulTitulo)
                         
                         VStack(spacing: 26){
-                            RoundedRectangle(cornerRadius: 29)
-                                .frame(width: 328, height: 54)
-                                .foregroundStyle(.colorNameView)
-                            
+                            ZStack {
+                                
+                                RoundedRectangle(cornerRadius: 29)
+                                    .frame(width: 328, height: 54)
+                                    .foregroundStyle(.colorNameView)
+                                
+                                TextField("digite seu nome", text: $name)
+                                    .padding(.leading, 60)
+                            }
                             
                             NavigationLink {
                                 ContentView()

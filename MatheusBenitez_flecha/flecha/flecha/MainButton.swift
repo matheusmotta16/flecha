@@ -56,7 +56,6 @@ struct MainButton: View {
                                 RoundedRectangle(cornerRadius: 28)
                                     .frame(width: 277, height: 128)
                                     .foregroundStyle(.azul)
-                                
                             }
                             
                         }

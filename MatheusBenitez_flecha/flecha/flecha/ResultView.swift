@@ -49,7 +49,7 @@ struct ResultView: View {
                             FavoriteView()
                         } label:{
                             ResultFavoriteButton()
-                        }
+                        } 
                     }
                 }
                 

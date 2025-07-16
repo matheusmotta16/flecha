@@ -8,16 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    @State private var name: String = ""
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 Image("BGMainScreen")
                     .resizable()
                     .ignoresSafeArea()
-                ZStack {
+                VStack {
+                    if !name.isEmpty {
+                        
+                            Text("Welcome \(name)!")
+                            TextField("name", text: $name)
+                        
+                        
+                    }
                     
-                    MainButton()
                 }
+                MainButton()
                 
                 VStack {
                     HStack (spacing: 280){
