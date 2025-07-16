@@ -20,27 +20,26 @@ struct NameScreen: View {
                 VStack(spacing: 244){
                     VStack {
                         Text("Olá \nprojetista!")
-                            .font(.system(size: 60))
+                            .font(.system(size: 60, weight: .bold, design: .rounded))
                             .padding(.trailing, 20)
                             .foregroundStyle(.azulTitulo)
-                            .bold()
                         
                         Text("como posso te chamar?")
-                            .font(.system(size: 20))
-                            .padding(.trailing,80)
+                            .font(.system(size: 20, weight: .bold, design: .rounded))               .padding(.trailing,80)
                             .foregroundStyle(.azul)
                             .bold()
                     }
                     
                     VStack{
                         Text("digite seu nome")
+                            .font(.system(size: 15, weight: .bold, design: .rounded))
                             .foregroundStyle(.azulTitulo)
-                            .bold()
-                        VStack(spacing: 30){
+                        
+                        VStack(spacing: 26){
                             RoundedRectangle(cornerRadius: 29)
                                 .frame(width: 328, height: 54)
                                 .foregroundStyle(.colorNameView)
-                           
+                            
                             
                             NavigationLink {
                                 ContentView()
@@ -52,9 +51,8 @@ struct NameScreen: View {
                                         .frame(width: 328, height: 54)
                                         .foregroundStyle(.colorNameView)
                                     Text("continuar")
-                                        .font(.title)
+                                        .font(.system(size: 30, weight: .bold, design: .rounded))
                                         .foregroundStyle(.azulTitulo)
-                                        .bold()
                                 }
                             }
                         }

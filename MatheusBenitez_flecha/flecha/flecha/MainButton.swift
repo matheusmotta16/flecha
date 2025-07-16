@@ -20,10 +20,9 @@ struct MainButton: View {
                 VStack(spacing: 35){
                   
                     Text("Escolha \no material")
-                        .font(.largeTitle)
-                        .padding(.trailing, 135)
+                        .font(.system(size: 45.0, weight: .bold, design: .rounded))
+                        .padding(.trailing, 95)
                         .foregroundStyle(.azulTitulo)
-                        .bold()
                     
                     ZStack {
                         
@@ -44,6 +43,7 @@ struct MainButton: View {
                                     .padding(.trailing, 174)
                                 
                                 Text("concreto")
+                                    .font(.system(size: 15, weight: .regular, design: .rounded))
                                     .padding(.trailing, 174)
                                     .foregroundStyle(.azulTexto)
                                 
@@ -80,6 +80,7 @@ struct MainButton: View {
                                     .padding(.trailing, 174)
                                 
                                 Text("metal")
+                                    .font(.system(size: 15, weight: .regular, design: .rounded))
                                     .padding(.trailing, 174)
                                     .foregroundStyle(.azulTexto)
                                 

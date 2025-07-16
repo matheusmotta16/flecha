@@ -23,7 +23,7 @@ struct CalculusView: View {
                             .foregroundStyle(.azulTitulo)
                             .bold()
                         
-                        Text("preecnha os espços com \n     os dados desejados")
+                        Text("preecnha os espaços com \n     os dados desejados")
                             .foregroundStyle(.azul)
                             .bold()
                         
@@ -37,12 +37,16 @@ struct CalculusView: View {
                         calculusBlanks()
                        
                     }
-                    
-                    
+                    NavigationLink{
+                     ResultView()
+                    } label: {
+                        calculusButton()
+                    }
                 }
                 
             }
         }
+//        .ignoresSafeArea()
     }
     
 }

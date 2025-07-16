@@ -9,10 +9,27 @@ import SwiftUI
 
 struct FavoriteView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            
+            Image("BGFavoriteView")
+            
+            
+            VStack{
+                Text("Favoritos")
+                    .font(.system(size: 45.0, weight: .bold, design: .rounded))
+                    .foregroundStyle(.azulTitulo)
+                    .padding(.trailing, 95)
+                
+                VStack (spacing: 30){
+                    FavoriteList()
+                    FavoriteList()
+                    FavoriteList()
+                    FavoriteList()
+                }
+            } .padding(.bottom, 200)
+        }
     }
 }
-
 #Preview {
     FavoriteView()
 }
