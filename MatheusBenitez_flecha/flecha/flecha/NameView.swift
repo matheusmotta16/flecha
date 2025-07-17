@@ -10,7 +10,10 @@ import SwiftUI
 struct NameScreen: View {
     
     @State var title = ""
-    @State private var name: String = ""
+    @State var name: String = ""
+//    @Binding var username: String = ""
+    @State var username: String = ""
+    var nomeTest: String
     
     var body: some View {
         NavigationStack{
@@ -43,23 +46,32 @@ struct NameScreen: View {
                                     .frame(width: 328, height: 54)
                                     .foregroundStyle(.colorNameView)
                                 
-                                TextField("digite seu nome", text: $name)
+                                
+                                //                                VStack{
+                                //                                    if !username.isEmpty {
+                                //                                    MainButton(username: $username)
+                                //                            }
+                                
+                                TextField("", text: $username)
                                     .padding(.leading, 60)
+                                    .foregroundStyle(.calculus)
+                                //
+                                
                             }
-                            
-                            NavigationLink {
-                                ContentView()
-                            }
-                            label: {
-                                ZStack {
-                                    
-                                    RoundedRectangle(cornerRadius: 29)
-                                        .frame(width: 328, height: 54)
-                                        .foregroundStyle(.colorNameView)
-                                    Text("continuar")
-                                        .font(.system(size: 30, weight: .bold, design: .rounded))
-                                        .foregroundStyle(.azulTitulo)
-                                }
+                        }
+                        
+                        NavigationLink {
+                            homePage(nomeTeste: "nome")
+                        }
+                        label: {
+                            ZStack {
+                                
+                                RoundedRectangle(cornerRadius: 29)
+                                    .frame(width: 328, height: 54)
+                                    .foregroundStyle(.colorNameView)
+                                Text("continuar")
+                                    .font(.system(size: 30, weight: .bold, design: .rounded))
+                                    .foregroundStyle(.azulTitulo)
                             }
                         }
                     }
@@ -69,6 +81,7 @@ struct NameScreen: View {
     }
 }
 
+
 #Preview {
-    NameScreen()
+    NameScreen(nomeTest: "nome")
 }

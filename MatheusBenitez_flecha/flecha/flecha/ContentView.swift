@@ -10,7 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     
-    @State private var name: String = ""
+    
+    @State var username: String = ""
+    var nomeTeste = "nome"
     
     var body: some View {
         NavigationStack {
@@ -18,34 +20,16 @@ struct ContentView: View {
                 Image("BGMainScreen")
                     .resizable()
                     .ignoresSafeArea()
-                VStack {
-                    if !name.isEmpty {
-                        
-                            Text("Welcome \(name)!")
-                            TextField("name", text: $name)
-                        
-                        
-                    }
-                    
-                }
-                MainButton()
+//                VStack {
+//                    if !name.isEmpty {
+//
+//                            Text("Welcome \(name)!")
+//                            TextField("name", text: $name)
+//                        
+//                    }
+//                }
+                NameScreen(nomeTest: nomeTeste)
                 
-                VStack {
-                    HStack (spacing: 280){
-                        NavigationLink{
-                            NameScreen()
-                        } label: {
-                            miniLogo()
-                        }
-                        
-                        NavigationLink{
-                            FavoriteView()
-                        } label: {
-                            brushButton()
-                        }
-                    }
-                    Spacer()
-                }
                 
             }
         }

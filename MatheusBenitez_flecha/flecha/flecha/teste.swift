@@ -13,12 +13,22 @@ struct teste: View {
     var body: some View {
         VStack {
             if !username.isEmpty {
-                Text("Welcome \(username)!")
+                teste2(username: $username)
             }
             TextField("Username", text: $username)
         }
     }
 }
+
+struct teste2: View {
+    @Binding var username: String
+    
+    var body: some View {
+        Text("Welcome \(username)!")
+    }
+}
+
+
 #Preview {
     teste()
 }

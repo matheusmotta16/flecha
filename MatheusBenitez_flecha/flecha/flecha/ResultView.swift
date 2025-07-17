@@ -13,6 +13,8 @@ struct ResultView: View {
            
             ZStack{
                 Image("BGResultScreen")
+                    .resizable()
+                    .ignoresSafeArea()
                 
                 
                 VStack {
@@ -40,7 +42,7 @@ struct ResultView: View {
                     }
                     HStack (spacing: 35){
                         NavigationLink{
-                            ContentView()
+                            homePage(nomeTeste: "a")
                         } label:{
                             ResultButton()
                         }

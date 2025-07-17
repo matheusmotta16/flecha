@@ -12,7 +12,8 @@ struct FavoriteView: View {
         ZStack{
             
             Image("BGFavoriteView")
-            
+                .resizable()
+                .ignoresSafeArea()
             
             VStack{
                 Text("Favoritos")
