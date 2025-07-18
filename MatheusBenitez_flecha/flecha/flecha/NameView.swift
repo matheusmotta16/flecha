@@ -58,10 +58,11 @@ struct NameScreen: View {
                                 //
                                 
                             }
-                        }
+                        
                         
                         NavigationLink {
                             homePage(nomeTeste: "nome")
+                            .navigationBarBackButtonHidden()
                         }
                         label: {
                             ZStack {
@@ -73,6 +74,7 @@ struct NameScreen: View {
                                     .font(.system(size: 30, weight: .bold, design: .rounded))
                                     .foregroundStyle(.azulTitulo)
                             }
+                        }
                         }
                     }
                 }

@@ -24,6 +24,7 @@ struct homePage: View {
                     HStack (spacing: 280){
                         NavigationLink{
                             NameScreen(nomeTest: "nome")
+                            .navigationBarBackButtonHidden()
                         } label: {
                             miniLogo()
                         }
