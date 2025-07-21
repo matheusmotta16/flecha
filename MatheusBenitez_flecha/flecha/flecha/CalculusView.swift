@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct CalculusView: View {
+    
+    @State var inputDado: String = ""
+    @State var inputDado2: String = ""
+    @State var inputDado3: String = ""
     var body: some View {
         
         NavigationStack {
@@ -30,27 +34,50 @@ struct CalculusView: View {
                         
                     }
                     
-                    VStack (spacing: 10){
-                        calculusBlanks()
-                        calculusBlanks()
-                        calculusBlanks()
-                        calculusBlanks()
-                       
+                    VStack (spacing: 15){
+                        ZStack{
+                            calculusBlanks(dado: "área de influência")
+                            TextField("", text: $inputDado)
+                                .padding(.leading, 80)
+                                .padding(.top, 50)
+//                                .border(.red)
+                                .foregroundStyle(.calculus)
+                            
+                        }
+                        ZStack {
+                            calculusBlanks(dado: "número de pavimentos")
+                            TextField("", text: $inputDado2)
+                                .padding(.leading, 80)
+                                .padding(.top, 50)
+//                                .border(.red)
+                                .foregroundStyle(.calculus)
+                        }
+                        ZStack {
+                            calculusBlanks(dado: "dimensão do vão")
+                            TextField("", text: $inputDado3)
+                                .padding(.leading, 80)
+                                .padding(.top, 50)
+//                                .border(.red)
+                                .foregroundStyle(.calculus)
+                        }
+                        
+                        
+                        
+                        
+                        NavigationLink{
+                            ResultView1()
+                        } label: {
+                            calculusButton()
+                        }
                     }
-                    NavigationLink{
-                     ResultView()
-                    } label: {
-                        calculusButton()
-                    }
+                    
                 }
-                
             }
+            //        .ignoresSafeArea()
         }
-//        .ignoresSafeArea()
+        
     }
-    
 }
-
 
 #Preview {
     CalculusView()

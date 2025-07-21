@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct calculusBlanks: View {
+    
+    var dado: String = ""
     var body: some View {
         
-        VStack (spacing: 2){
+        VStack (alignment: .leading, spacing: 2){
             
-            Text("dado")
-                .foregroundStyle(.azulTitulo)
-                .padding(.trailing, 200)
-                .bold()
+            
+
+                Text("\(dado)")
+                    .foregroundStyle(.azulTitulo)
+                    .padding()
+                    .bold()
+                    
+            
             
             Rectangle()
                 .fill(.clear)
@@ -24,10 +30,10 @@ struct calculusBlanks: View {
                     RoundedRectangle(cornerRadius: 29)
                         .stroke(Color.calculus, lineWidth: 1)
                 )
-            
         }
+        .frame(width: 400)
     }
 }
 #Preview {
-    calculusBlanks()
+    calculusBlanks(dado: "área de influência")
 }

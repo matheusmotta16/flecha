@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct ResultBlanks: View {
+    
+    var tituloBlank: String = ""
     var body: some View {
         
         HStack (spacing: 42){
-            Text("Seção transversal")
-                .font(.system(size: 18, weight: .bold, design: .rounded))
-                .foregroundStyle(.azulTitulo)
+            HStack () {
+                Text("\(tituloBlank)")
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .foregroundStyle(.azulTitulo)
+                Spacer()
+                
+            }
+                
+                
             
             Rectangle()
                 .fill(.clear)
@@ -28,5 +36,5 @@ struct ResultBlanks: View {
 }
 
 #Preview {
-    ResultBlanks()
+    ResultBlanks(tituloBlank: "nome")
 }
