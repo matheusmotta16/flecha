@@ -10,6 +10,7 @@ import SwiftUI
 struct ResultBlanks: View {
     
     var tituloBlank: String = ""
+    var numberBlanks: String = ""
     var body: some View {
         
         HStack (spacing: 42){
@@ -23,13 +24,21 @@ struct ResultBlanks: View {
                 
                 
             
-            Rectangle()
-                .fill(.clear)
-                .frame(width: 115, height: 46)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 29)
-                    .stroke(Color.azul, lineWidth: 1)
-                )
+            ZStack {
+                Rectangle()
+                    .fill(.clear)
+                    .frame(width: 115, height: 46)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 29)
+                            .stroke(Color.azul, lineWidth: 1)
+                    )
+                    
+                
+                Text("\(numberBlanks)")
+                    .font(.system(size: 14, weight: .regular, design: .rounded))
+                    .foregroundStyle(.accent)
+                
+            }
         }
         
     }

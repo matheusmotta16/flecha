@@ -1,4 +1,11 @@
 //
+//  ResultView2.swift
+//  flecha
+//
+//  Created by Matheus Motta on 21/07/25.
+//
+
+//
 //  ResultView.swift
 //  flecha
 //
@@ -7,19 +14,17 @@
 
 import SwiftUI
 
-struct ResultView1: View {
-    
-    
+struct ResultView2: View {
     var body: some View {
         NavigationStack{
-            
+           
             ZStack{
                 Image("BGResultScreen")
                     .resizable()
                     .ignoresSafeArea()
                 
                 
-                VStack {
+                VStack (spacing: 10){
                     Text("Aqui está!")
                         .font(.system(size: 50, weight: .bold, design: .rounded))
                         .foregroundStyle(.azulTitulo)
@@ -31,21 +36,17 @@ struct ResultView1: View {
                     
                 }
                 
-                VStack (spacing: 20){
-                    Text("Concreto")
+                VStack (spacing: 40){
+                    Text("Metal")
                         .font(.system(size: 25, weight: .bold, design: .rounded))
                         .foregroundStyle(.azul)
                         .padding(.top, 400)
                     
-                    VStack {
-                        
+                    VStack (spacing: 18) {
                         ResultBlanks(tituloBlank: "seção transversal")
-                        ResultBlanks(tituloBlank: "fck utilizado")
-                        ResultBlanks(tituloBlank: "tensão admissível")
+                        ResultBlanks(tituloBlank: "vão máximo")
                     }
                     .padding(.horizontal, 40)
-                    
-                    
                     HStack (spacing: 35){
                         NavigationLink{
                             homePage(nomeTeste: "a")
@@ -57,17 +58,15 @@ struct ResultView1: View {
                             FavoriteView()
                         } label:{
                             ResultFavoriteButton()
-                        } 
+                        }
                     }
                 }
-                
-                
-            } 
+            }
         }
         
     }
 }
 
 #Preview {
-    ResultView1()
+    ResultView2()
 }

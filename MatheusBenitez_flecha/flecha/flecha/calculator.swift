@@ -11,43 +11,32 @@ struct Calculator {
     
     public var pesoPilar: Double
     public var pesoPavimento: Double = 10
-    public var cargaTotal: Double
+//    public var cargaTotal: Double
     public var numPavimento: Double
     public var tensaoAdm: Double = 2.125
     public var pilarFinal: Double = 20
     
-    init(pesoPilar: Double, pesoPavimento: Double, cargaTotal: Double, numPavimento: Double, tensaoAdm: Double, pilarFinal: Double) {
+    init(pesoPilar: Double, numPavimento: Double) {
         self.pesoPilar = pesoPilar
-        self.pesoPavimento = pesoPavimento
-        self.cargaTotal = cargaTotal
+//        self.cargaTotal = cargaTotal
         self.numPavimento = numPavimento
-        self.tensaoAdm = tensaoAdm
-        self.pilarFinal = pilarFinal
+
     }
     
-    public func pesoAplicado(pesoPilar: Double, pesoPavimento: Double) -> Double {
+    public func calcular(pesoPilar: Double, numPavimento: Double) -> Double {
         
-        let resultado = pesoPilar * pesoPavimento
-        return resultado
-    }
-    
-    
-    public func pesoCarga( pesoPilar: Double, pesoPavimento: Double, numPavimento: Double) -> Double {
+        let pesoAplicado = pesoPilar * pesoPavimento
         
-        let resultado = pesoAplicado(pesoPilar: pesoPilar, pesoPavimento: pesoPavimento) / numPavimento
-        return resultado
-    }
-  
-    
-    public func carregamentoFinal (pesoPilar: Double, pesoPavimento: Double, numPavimento: Double, tensaoAdm: Double) -> Double {
-        let resultado = pesoCarga(pesoPilar: pesoPilar, pesoPavimento: pesoPavimento, numPavimento: numPavimento) / tensaoAdm
-        return resultado
-    }
-    
-    
-    public func calculoFinal (pesoPilar: Double, pesoPavimento: Double, numPavimento: Double, cargaFinal: Double, tensaoAdm: Double, pilarFinal: Double) -> Double {
-        let resultado = carregamentoFinal (pesoPilar: pesoPilar, pesoPavimento: pesoPavimento, numPavimento: numPavimento, tensaoAdm: tensaoAdm) / pilarFinal
-        return resultado
+        let pesoCarga = pesoAplicado * numPavimento
+        
+        let carregamentoFinal = pesoCarga / tensaoAdm
+        
+        let resuladoFinal = carregamentoFinal / pilarFinal
+        return resuladoFinal
         
     }
+    
 }
+
+//var calculator = Calculator()
+//calculator.pesoAplicado(pesoPilar: 11.12, pesoPavimento: 10)

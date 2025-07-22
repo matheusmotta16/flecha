@@ -7,10 +7,13 @@
 
 import SwiftUI
 
-struct ResultView: View {
+struct ResultView1: View {
+    
+    @ObservedObject private var viewModel: CoreDataViewModel = CoreDataViewModel()
+    
     var body: some View {
         NavigationStack{
-           
+            
             ZStack{
                 Image("BGResultScreen")
                     .resizable()
@@ -30,16 +33,20 @@ struct ResultView: View {
                 }
                 
                 VStack (spacing: 20){
-                    Text("Material")
+                    Text("Concreto")
                         .font(.system(size: 25, weight: .bold, design: .rounded))
                         .foregroundStyle(.azul)
                         .padding(.top, 400)
                     
-                    VStack (spacing: 18) {
-                        ResultBlanks()
-                        ResultBlanks()
-                        ResultBlanks()
+                    VStack {
+                        
+                        ResultBlanks(tituloBlank: "seção transversal")
+                        ResultBlanks(tituloBlank: "fck utilizado", numberBlanks: "3.5 KN/ cm²")
+                        ResultBlanks(tituloBlank: "tensão admissível", numberBlanks: "2.125 KN/ cm²")
                     }
+                    .padding(.horizontal, 40)
+                    
+                    
                     HStack (spacing: 35){
                         NavigationLink{
                             homePage(nomeTeste: "a")
@@ -51,17 +58,20 @@ struct ResultView: View {
                             FavoriteView()
                         } label:{
                             ResultFavoriteButton()
-                        } 
+                            //                        }  .simultaneousGesture(TapGesture().onEnded {
+                            //                            viewModel.createConcreto(secaoTransversal: <#T##Double#>, tensaoAdm: tensaoAdm, fckUtilizado: <#T##Double#>)
+                            //
+                            //                        })
+                        }
                     }
                 }
                 
-                
-            } 
+            }
         }
         
     }
 }
 
 #Preview {
-    ResultView()
+    ResultView1()
 }

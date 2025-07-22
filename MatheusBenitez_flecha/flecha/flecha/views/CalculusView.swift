@@ -9,9 +9,13 @@ import SwiftUI
 
 struct CalculusView: View {
     
-    @State var inputDado: String = ""
-    @State var inputDado2: String = ""
-    @State var inputDado3: String = ""
+    
+    @ObservedObject private var viewModel: CoreDataViewModel = CoreDataViewModel()
+    
+    
+    @State var areaDeInfluencia: Double = 0
+    @State var numeroPavimento: Double = 0
+    @State var dimensaoVao: Double = 0
     var body: some View {
         
         NavigationStack {
@@ -37,7 +41,7 @@ struct CalculusView: View {
                     VStack (spacing: 15){
                         ZStack{
                             calculusBlanks(dado: "área de influência")
-                            TextField("", text: $inputDado)
+                            TextField("", value: $areaDeInfluencia, format: .number)
                                 .padding(.leading, 80)
                                 .padding(.top, 50)
 //                                .border(.red)
@@ -46,7 +50,7 @@ struct CalculusView: View {
                         }
                         ZStack {
                             calculusBlanks(dado: "número de pavimentos")
-                            TextField("", text: $inputDado2)
+                            TextField("", value: $numeroPavimento, format: .number)
                                 .padding(.leading, 80)
                                 .padding(.top, 50)
 //                                .border(.red)
@@ -54,7 +58,7 @@ struct CalculusView: View {
                         }
                         ZStack {
                             calculusBlanks(dado: "dimensão do vão")
-                            TextField("", text: $inputDado3)
+                            TextField("", value: $dimensaoVao, format: .number)
                                 .padding(.leading, 80)
                                 .padding(.top, 50)
 //                                .border(.red)
@@ -66,14 +70,20 @@ struct CalculusView: View {
                         
                         NavigationLink{
                             ResultView1()
-                        } label: {
+                        }
+                        label: {
                             calculusButton()
                         }
+                        .simultaneousGesture(TapGesture().onEnded {
+                            let calculadora = Calculator(pesoPilar: areaDeInfluencia, numPavimento: numeroPavimento)
+                            let dimensao = calculadora.calcular(pesoPilar: areaDeInfluencia, numPavimento: numeroPavimento)
+                            
+                        })
                     }
                     
                 }
             }
-            //        .ignoresSafeArea()
+           
         }
         
     }
