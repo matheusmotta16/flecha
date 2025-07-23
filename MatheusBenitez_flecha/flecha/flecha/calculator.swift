@@ -40,3 +40,21 @@ struct Calculator {
 
 //var calculator = Calculator()
 //calculator.pesoAplicado(pesoPilar: 11.12, pesoPavimento: 10)
+
+
+struct metalCalculator {
+    
+    public var vaoMetal: Double
+    
+    
+    init(vaoMetal: Double) {
+        self.vaoMetal = vaoMetal
+    }
+    
+    
+    public func calcularMetal(vaoMetal: Double) -> Double {
+        let vaoPilarMetal = vaoMetal * 0.3
+        
+        return vaoPilarMetal
+    }
+}

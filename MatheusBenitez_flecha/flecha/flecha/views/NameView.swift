@@ -54,7 +54,8 @@ struct NameScreen: View {
                                 
                                 TextField("", text: $username)
                                     .padding(.leading, 60)
-                                    .foregroundStyle(.calculus)
+                                    .foregroundStyle(.azulEscuro)
+                                    
                                     
                                 //
                                 

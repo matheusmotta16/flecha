@@ -46,7 +46,7 @@ struct MainButton: View {
                             }
                             
                             NavigationLink {
-                                CalculusView()
+                                CalculusView(dimensaoConcreto: 0)
                             }
                             label: {
                                 RoundedRectangle(cornerRadius: 28)
@@ -82,7 +82,7 @@ struct MainButton: View {
                             }
                             
                             NavigationLink {
-                                CalculusView()
+                                CalculusViewMetal()
                             }
                             label: {
                                 RoundedRectangle(cornerRadius: 28)

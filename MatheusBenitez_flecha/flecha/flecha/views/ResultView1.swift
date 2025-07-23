@@ -11,6 +11,8 @@ struct ResultView1: View {
     
     @ObservedObject private var viewModel: CoreDataViewModel = CoreDataViewModel()
     
+    @Binding var dimensaoConcreto: Double
+    
     var body: some View {
         NavigationStack{
             
@@ -40,7 +42,7 @@ struct ResultView1: View {
                     
                     VStack {
                         
-                        ResultBlanks(tituloBlank: "seção transversal")
+                        ResultConcreto(tituloBlank: "seção transversal", resultConcreto: dimensaoConcreto)
                         ResultBlanks(tituloBlank: "fck utilizado", numberBlanks: "3.5 KN/ cm²")
                         ResultBlanks(tituloBlank: "tensão admissível", numberBlanks: "2.125 KN/ cm²")
                     }
@@ -73,5 +75,5 @@ struct ResultView1: View {
 }
 
 #Preview {
-    ResultView1()
+    ResultView1(dimensaoConcreto:.constant(0))
 }

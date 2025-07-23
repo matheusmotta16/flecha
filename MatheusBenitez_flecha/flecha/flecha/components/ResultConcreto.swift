@@ -1,19 +1,17 @@
 //
-//  ResultBlanks.swift
+//  ResultConcreto.swift
 //  flecha
 //
-//  Created by Matheus Motta on 16/07/25.
+//  Created by Matheus Motta on 23/07/25.
 //
 
 import SwiftUI
 
-struct ResultBlanks: View {
-    
+struct ResultConcreto: View {
     var tituloBlank: String = ""
-    var numberBlanks: String = ""
+    var resultConcreto: Double = 0.0
     
     var body: some View {
-        
         HStack (spacing: 42){
             HStack () {
                 Text("\(tituloBlank)")
@@ -35,7 +33,7 @@ struct ResultBlanks: View {
                     )
                     
                 
-                Text("\(numberBlanks)")
+                Text("\(resultConcreto, format: .number)")
                     .font(.system(size: 14, weight: .regular, design: .rounded))
                     .foregroundStyle(.accent)
                 
@@ -43,10 +41,10 @@ struct ResultBlanks: View {
                 
             }
         }
-        
     }
 }
 
 #Preview {
-    ResultBlanks(tituloBlank: "nome")
+    ResultConcreto()
 }
+

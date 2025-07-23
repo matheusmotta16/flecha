@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CalculusView: View {
+struct CalculusViewMetal: View {
     
     
     @ObservedObject private var viewModel: CoreDataViewModel = CoreDataViewModel()
@@ -16,8 +16,6 @@ struct CalculusView: View {
     @State var areaDeInfluencia: Double = 0
     @State var numeroPavimento: Double = 0
     @State var dimensaoVao: Double = 0
-    @State var dimensaoConcreto: Double = 0
-    
     var body: some View {
         
         NavigationStack {
@@ -79,14 +77,14 @@ struct CalculusView: View {
                             
                             VStack{
                                 NavigationLink{
-                                    ResultView1(dimensaoConcreto: $dimensaoConcreto)
+                                    ResultView1(dimensaoConcreto:.constant(0))
                                 }
                                 label: {
                                     calculusButton()
                                 }
                                 .simultaneousGesture(TapGesture().onEnded {
-                                    let calculadora = Calculator(pesoPilar: areaDeInfluencia, numPavimento: numeroPavimento)
-                                     dimensaoConcreto = calculadora.calcular(pesoPilar: areaDeInfluencia, numPavimento: numeroPavimento)
+                                    let calculadora = metalCalculator(vaoMetal: dimensaoVao)
+                                    let dimensao = calculadora.calcularMetal(vaoMetal: dimensaoVao)
                                     
                                 })
                             }
@@ -102,5 +100,5 @@ struct CalculusView: View {
 }
 
 #Preview {
-    CalculusView( dimensaoConcreto: 0)
+    CalculusViewMetal()
 }
