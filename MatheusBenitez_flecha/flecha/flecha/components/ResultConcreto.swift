@@ -10,6 +10,7 @@ import SwiftUI
 struct ResultConcreto: View {
     var tituloBlank: String = ""
     var resultConcreto: Double = 0.0
+    var numberBlanks: String = ""
     
     var body: some View {
         HStack (spacing: 42){
@@ -33,9 +34,14 @@ struct ResultConcreto: View {
                     )
                     
                 
-                Text("\(resultConcreto, format: .number)")
-                    .font(.system(size: 14, weight: .regular, design: .rounded))
-                    .foregroundStyle(.accent)
+                HStack {
+                    Text("\(resultConcreto, format: .number)")
+                        .font(.system(size: 14, weight: .regular, design: .rounded))
+                        .foregroundStyle(.accent)
+                    Text("\(numberBlanks)")
+                        .font(.system(size: 14, weight: .regular, design: .rounded))
+                        .foregroundStyle(.accent)
+                }
                 
                 
                 

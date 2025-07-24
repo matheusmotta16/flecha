@@ -43,7 +43,7 @@ struct ResultView2: View {
                         .padding(.top, 400)
                     
                     VStack (spacing: 18) {
-                        ResultBlanks(tituloBlank: "seção transversal")
+                        ResultBlanks(tituloBlank: "altura máxima(viga)")
                         ResultBlanks(tituloBlank: "vão máximo")
                     }
                     .padding(.horizontal, 40)

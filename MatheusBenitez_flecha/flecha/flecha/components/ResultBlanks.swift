@@ -19,6 +19,8 @@ struct ResultBlanks: View {
                 Text("\(tituloBlank)")
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(.azulTitulo)
+//                    .frame(width: 40)
+//                    .border(.red)
                 Spacer()
                 
             }

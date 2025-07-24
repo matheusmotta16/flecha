@@ -42,7 +42,7 @@ struct ResultView1: View {
                     
                     VStack {
                         
-                        ResultConcreto(tituloBlank: "seção transversal", resultConcreto: dimensaoConcreto)
+                        ResultConcreto(tituloBlank: "seção transversal", resultConcreto: dimensaoConcreto, numberBlanks: "cm")
                         ResultBlanks(tituloBlank: "fck utilizado", numberBlanks: "3.5 KN/ cm²")
                         ResultBlanks(tituloBlank: "tensão admissível", numberBlanks: "2.125 KN/ cm²")
                     }
