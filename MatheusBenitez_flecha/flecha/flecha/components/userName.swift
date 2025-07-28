@@ -15,7 +15,7 @@ struct userName: View {
         
         Text("Olá \(nomeTeste)!")
             .padding(.trailing, 210)
-            .foregroundStyle(.accent)
+            .foregroundStyle(.dataBlanks)
             .font(.system(size: 20, weight: .bold, design: .rounded))
     }
 }

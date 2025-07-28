@@ -11,7 +11,6 @@ struct NameScreen: View {
     
     @State var title = ""
     @State var name: String = ""
-//    @Binding var username: String = ""
     @State var username: String = ""
     var nomeTest: String
     
@@ -21,30 +20,27 @@ struct NameScreen: View {
                 Image("BGNameScreen")
                     .resizable()
                     .ignoresSafeArea()
-                VStack(spacing: 244){
+                VStack(spacing: 160){
                     VStack {
                         Text("Olá \nprojetista!")
                             .font(.system(size: 60, weight: .bold, design: .rounded))
                             .padding(.trailing, 20)
-                            .foregroundStyle(.azulTitulo)
+                            .foregroundStyle(.azulTexto)
                         
                         Text("como posso te chamar?")
                             .font(.system(size: 20, weight: .bold, design: .rounded))               .padding(.trailing,80)
-                            .foregroundStyle(.azul)
+                            .foregroundStyle(.sub)
                             .bold()
                     }
                     
                     VStack{
-                        Text("digite seu nome")
-                            .font(.system(size: 15, weight: .bold, design: .rounded))
-                            .foregroundStyle(.azulTitulo)
+                        
+                            
                         
                         VStack(spacing: 26){
                             ZStack {
                                 
-                                RoundedRectangle(cornerRadius: 29)
-                                    .frame(width: 328, height: 54)
-                                    .foregroundStyle(.colorNameView)
+                                NameField()
                                 
                                 
                                 //                                VStack{
@@ -63,7 +59,7 @@ struct NameScreen: View {
                         
                         
                         NavigationLink {
-                            homePage(nomeTeste: "nome")
+                            homePage(nomeTeste: "matheus")
                             .navigationBarBackButtonHidden()
                         }
                         label: {
@@ -77,6 +73,8 @@ struct NameScreen: View {
                                     .foregroundStyle(.azulTitulo)
                             }
                         }
+                        
+                            
                         }
                     }
                 }
@@ -87,5 +85,5 @@ struct NameScreen: View {
 
 
 #Preview {
-    NameScreen(nomeTest: "nome")
+    NameScreen(nomeTest: "matheus")
 }

@@ -30,12 +30,12 @@ struct CalculusViewMetal: View {
                         VStack {
                             
                             Text("Dimensões")
-                                .font(.largeTitle)
-                                .foregroundStyle(.azulTitulo)
+                                .font(.system(size: 50, weight: .bold, design: .rounded))
+                                .foregroundStyle(.azulTexto)
                                 .bold()
                             
                             Text("preecnha os espaços com \n     os dados desejados")
-                                .foregroundStyle(.azul)
+                                .foregroundStyle(.sub)
                                 .bold()
                             
                             
@@ -77,7 +77,7 @@ struct CalculusViewMetal: View {
                             
                             VStack{
                                 NavigationLink{
-                                    ResultView1(dimensaoConcreto:.constant(0))
+                                    ResultView2(dimensaoVao:  $dimensaoVao)
                                 }
                                 label: {
                                     calculusButton()
@@ -85,6 +85,7 @@ struct CalculusViewMetal: View {
                                 .simultaneousGesture(TapGesture().onEnded {
                                     let calculadora = metalCalculator(vaoMetal: dimensaoVao)
                                     let dimensao = calculadora.calcularMetal(vaoMetal: dimensaoVao)
+                                    dimensaoVao = calculadora.calcularMetal(vaoMetal: dimensaoVao)
                                     
                                 })
                             }
@@ -100,5 +101,5 @@ struct CalculusViewMetal: View {
 }
 
 #Preview {
-    CalculusViewMetal()
+    CalculusViewMetal(dimensaoVao: 0)
 }

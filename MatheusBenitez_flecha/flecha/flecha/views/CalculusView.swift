@@ -15,7 +15,7 @@ struct CalculusView: View {
     
     @State var areaDeInfluencia: Double = 0
     @State var numeroPavimento: Double = 0
-    @State var dimensaoVao: Double = 0
+    @State var dimensaoVaoBlank: Double = 0
     @State var dimensaoConcreto: Double = 0
     
     var body: some View {
@@ -27,22 +27,21 @@ struct CalculusView: View {
                 Image("BGCalculusScreen")
                     .resizable()
                     .ignoresSafeArea()
-                ScrollView {
+             
                     VStack (spacing: 60){
                         VStack {
-                            
                             Text("Dimensões")
-                                .font(.largeTitle)
-                                .foregroundStyle(.azulTitulo)
+                                .font(.system(size: 50, weight: .bold, design: .rounded))
+                                .foregroundStyle(.azulTexto)
                                 .bold()
                             
                             Text("preecnha os espaços com \n     os dados desejados")
-                                .foregroundStyle(.azul)
+                                .foregroundStyle(.sub)
                                 .bold()
                             
                             
                         }
-                        
+                        ScrollView {
                         VStack (spacing: 40){
                             
                             VStack{
@@ -67,7 +66,7 @@ struct CalculusView: View {
                                 }
                                 ZStack {
                                     calculusBlanks(dado: "dimensão do vão")
-                                    TextField("", value: $dimensaoVao, format: .number)
+                                    TextField("", value: $dimensaoVaoBlank, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
                                     //                                .border(.red)
@@ -80,14 +79,14 @@ struct CalculusView: View {
                             VStack{
                                 NavigationLink{
                                     ResultView1(dimensaoConcreto: $dimensaoConcreto)
+                                        
                                 }
                                 label: {
                                     calculusButton()
                                 }
                                 .simultaneousGesture(TapGesture().onEnded {
                                     let calculadora = Calculator(pesoPilar: areaDeInfluencia, numPavimento: numeroPavimento)
-                                     dimensaoConcreto = calculadora.calcular(pesoPilar: areaDeInfluencia, numPavimento: numeroPavimento)
-                                    
+                                    dimensaoConcreto = calculadora.calcular(pesoPilar: areaDeInfluencia, numPavimento: numeroPavimento)
                                 })
                             }
                         }

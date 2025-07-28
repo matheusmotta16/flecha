@@ -16,7 +16,7 @@ struct MainButton: View {
             
             ZStack {
                 
-                VStack(spacing: 35){
+                VStack(spacing: 60){
                     
                     
                     
@@ -27,21 +27,21 @@ struct MainButton: View {
                             .frame(width: 290, height: 191)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 29)
-                                    .stroke(Color.azul, lineWidth: 1)
+                                    .stroke(Color.azulTexto, lineWidth: 1)
                             )
-                        VStack {
+                        VStack (spacing: 5){
                             
                             ZStack {
                                 
                                 RoundedRectangle(cornerRadius: 28)
                                     .frame(width: 97, height: 38)
-                                    .foregroundStyle(.azulClaro)
+                                    .foregroundStyle(.azulMainbutton)
                                     .padding(.trailing, 174)
                                 
                                 Text("concreto")
-                                    .font(.system(size: 15, weight: .regular, design: .rounded))
+                                    .font(.system(size: 15, weight: .bold, design: .rounded))
                                     .padding(.trailing, 174)
-                                    .foregroundStyle(.azulTexto)
+                                    .foregroundStyle(.labelMain)
                                 
                             }
                             
@@ -49,9 +49,12 @@ struct MainButton: View {
                                 CalculusView(dimensaoConcreto: 0)
                             }
                             label: {
-                                RoundedRectangle(cornerRadius: 28)
-                                    .frame(width: 277, height: 128)
-                                    .foregroundStyle(.azul)
+                           
+                                    Image("MainConcreto")
+                                        .resizable()
+                                        .frame(width: 277, height: 135)
+                                        .opacity(0.8)
+                                
                             }
                             
                         }
@@ -63,21 +66,22 @@ struct MainButton: View {
                             .frame(width: 290, height: 191)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 29)
-                                    .stroke(Color.azul, lineWidth: 1)
+                                    .stroke(Color.azulTexto, lineWidth: 1)
                             )
-                        VStack {
+                        VStack (spacing: 10) {
                             
                             ZStack {
                                 
                                 RoundedRectangle(cornerRadius: 28)
                                     .frame(width: 97, height: 38)
-                                    .foregroundStyle(.azulClaro)
+                                    .foregroundStyle(.azulMainbutton)
                                     .padding(.trailing, 174)
                                 
                                 Text("metal")
-                                    .font(.system(size: 15, weight: .regular, design: .rounded))
+                                    .font(.system(size: 15, weight: .bold, design: .rounded))
                                     .padding(.trailing, 174)
-                                    .foregroundStyle(.azulTexto)
+                                    .foregroundStyle(.labelMain)
+                                
                                 
                             }
                             
@@ -85,9 +89,11 @@ struct MainButton: View {
                                 CalculusViewMetal()
                             }
                             label: {
-                                RoundedRectangle(cornerRadius: 28)
-                                    .frame(width: 277, height: 128)
-                                    .foregroundStyle(.azul)
+                                
+                                Image("MainMetal")
+                                    .resizable()
+                                    .frame(width: 277, height: 135)
+                                    .opacity(0.9)
                                 
                             }
                             

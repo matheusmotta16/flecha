@@ -15,6 +15,9 @@
 import SwiftUI
 
 struct ResultView2: View {
+    
+    @Binding var dimensaoVao: Double
+    
     var body: some View {
         NavigationStack{
            
@@ -27,29 +30,32 @@ struct ResultView2: View {
                 VStack (spacing: 10){
                     Text("Aqui está!")
                         .font(.system(size: 50, weight: .bold, design: .rounded))
-                        .foregroundStyle(.azulTitulo)
+                        .foregroundStyle(.azulTexto)
                     
-                    Circle()
-                        .frame(width: 245)
-                        .padding(.bottom, 280)
-                        .foregroundStyle(.calculusButton)
+//                    Circle()
+//                        .frame(width: 245)
+//                        .padding(.bottom, 280)
+//                        .foregroundStyle(.calculusButton)
                     
-                }
+                    Image("ResultMetal")
+                        .resizable()
+                        .frame(width: 245, height: 245)
+                }.padding(.bottom, 310)
                 
                 VStack (spacing: 40){
                     Text("Metal")
                         .font(.system(size: 25, weight: .bold, design: .rounded))
-                        .foregroundStyle(.azul)
+                        .foregroundStyle(.azulTexto)
                         .padding(.top, 400)
                     
                     VStack (spacing: 18) {
-                        ResultBlanks(tituloBlank: "altura máxima(viga)")
+                        ResultMetal(tituloBlank: "altura máxima(viga)", resultMetal: dimensaoVao)
                         ResultBlanks(tituloBlank: "vão máximo")
                     }
                     .padding(.horizontal, 40)
                     HStack (spacing: 35){
                         NavigationLink{
-                            homePage(nomeTeste: "a")
+                            homePage(nomeTeste: "matheus")
                         } label:{
                             ResultButton()
                         }
@@ -68,5 +74,5 @@ struct ResultView2: View {
 }
 
 #Preview {
-    ResultView2()
+    ResultView2(dimensaoVao: .constant(0))
 }

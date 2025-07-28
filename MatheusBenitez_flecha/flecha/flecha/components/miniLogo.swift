@@ -15,7 +15,7 @@ struct miniLogo: View {
                 Circle()
                     .frame(width: 40)
                     .foregroundStyle(.accent)
-                    .opacity(0.2)
+                    .opacity(0.1)
                 
                 Image("miniLogo")
                     .resizable()

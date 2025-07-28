@@ -17,7 +17,7 @@ struct calculusBlanks: View {
             
 
                 Text("\(dado)")
-                    .foregroundStyle(.azulTitulo)
+                    .foregroundStyle(.dataName)
                     .padding()
                     .bold()
                     
@@ -28,7 +28,7 @@ struct calculusBlanks: View {
                 .frame(width: 290, height: 56)
                 .overlay(
                     RoundedRectangle(cornerRadius: 29)
-                        .stroke(Color.calculus, lineWidth: 1)
+                        .stroke(Color.dataBlanks, lineWidth: 1)
                 )
         }
         .frame(width: 400)

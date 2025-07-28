@@ -10,7 +10,7 @@ import SwiftUI
 struct brushButton: View {
     var body: some View {
         
-        Image(systemName: "paintbrush.pointed.fill")
+        Image(systemName: "heart.text.square")
         
 //            .padding(.leading, 320)
 //            .padding(.bottom, 700)

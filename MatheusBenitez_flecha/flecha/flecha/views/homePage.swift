@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct homePage: View {
+    
+    @Environment(\.dismiss) var dismiss
 //    @Binding var username: String
     var nomeTeste: String
     var body: some View {
@@ -22,18 +24,15 @@ struct homePage: View {
                 VStack {
                     
                     HStack (spacing: 280){
-                        NavigationLink{
-                            NameScreen(nomeTest: "nome")
-                            .navigationBarBackButtonHidden()
-                        } label: {
-                            miniLogo()
-                        }
+//                        NavigationLink{
+//                            NameScreen(nomeTest: "nome")
+//                            .navigationBarBackButtonHidden()
+//                            
+//                        } label: {
+//                            miniLogo()
+//                        }
                         
-                        NavigationLink{
-                            FavoriteView()
-                        } label: {
-                            brushButton()
-                        }
+                        
                     }
                    
                     userName()
@@ -41,10 +40,28 @@ struct homePage: View {
                     Text("Escolha \no material")
                         .font(.system(size: 45.0, weight: .bold, design: .rounded))
                         .padding(.trailing, 95)
-                        .foregroundStyle(.azulTitulo)
+                        .foregroundStyle(.azulTexto)
                     
                     MainButton()
                     Spacer()
+                }
+            }
+            .toolbar{
+                ToolbarItem(placement: . cancellationAction) {
+                    Button  {
+                        
+                        dismiss()
+                    } label: {
+                        miniLogo()
+                    }
+                }
+                ToolbarItem(placement: .confirmationAction){
+                    NavigationLink{
+                        FavoriteView()
+                    } label: {
+                        brushButton()
+                    }
+                    
                 }
             }
         }
@@ -52,5 +69,5 @@ struct homePage: View {
 }
 
 #Preview {
-    homePage(nomeTeste: "Matheus")
+    homePage(nomeTeste: "matheus")
 }

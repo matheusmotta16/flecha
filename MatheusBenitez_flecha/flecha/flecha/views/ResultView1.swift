@@ -12,7 +12,7 @@ struct ResultView1: View {
     @ObservedObject private var viewModel: CoreDataViewModel = CoreDataViewModel()
     
     @Binding var dimensaoConcreto: Double
-    
+    //    @State var favorite: Bool = false
     var body: some View {
         NavigationStack{
             
@@ -25,19 +25,22 @@ struct ResultView1: View {
                 VStack {
                     Text("Aqui está!")
                         .font(.system(size: 50, weight: .bold, design: .rounded))
-                        .foregroundStyle(.azulTitulo)
+                        .foregroundStyle(.azulTexto)
                     
-                    Circle()
-                        .frame(width: 245)
-                        .padding(.bottom, 280)
-                        .foregroundStyle(.calculusButton)
+                    //                    Circle()
+                    //                        .frame(width: 245)
+                    //                        .padding(.bottom, 280)
+                    //                        .foregroundStyle(.calculusButton)
+                    Image("ResultConcreto")
+                        .resizable()
+                        .frame(width: 245, height: 245)
                     
-                }
+                }.padding(.bottom, 310)
                 
                 VStack (spacing: 20){
                     Text("Concreto")
                         .font(.system(size: 25, weight: .bold, design: .rounded))
-                        .foregroundStyle(.azul)
+                        .foregroundStyle(.azulTexto)
                         .padding(.top, 400)
                     
                     VStack {
@@ -60,19 +63,23 @@ struct ResultView1: View {
                             FavoriteView()
                         } label:{
                             ResultFavoriteButton()
-                            //                        }  .simultaneousGesture(TapGesture().onEnded {
-                            //                            viewModel.createConcreto(secaoTransversal: <#T##Double#>, tensaoAdm: tensaoAdm, fckUtilizado: <#T##Double#>)
-                            //
-                            //                        })
-                        }
+                        }  .simultaneousGesture(TapGesture().onEnded {
+                            //                            favorite.toggle()
+                            viewModel.createConcreto(secaoTransversal: dimensaoConcreto, favorite: true)
+                            for concreto in viewModel.concretos{
+                                print("\(concreto.secaoTransversal) e favorito: \(concreto.favorite)")
+                            }
+                            
+                        })
                     }
                 }
-                
             }
+
         }
-        
     }
 }
+
+
 
 #Preview {
     ResultView1(dimensaoConcreto:.constant(0))

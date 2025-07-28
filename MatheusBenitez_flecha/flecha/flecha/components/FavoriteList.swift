@@ -5,15 +5,18 @@
 //  Created by Matheus Motta on 16/07/25.
 //
 
+//TODO:
 import SwiftUI
 
 struct FavoriteList: View {
+    
+    var dimensaoConcreto: Double
     var body: some View {
         HStack{
             ZStack{
                 Circle()
                     .fill(.clear)
-                    .foregroundStyle(.azulClaro)
+                    .foregroundStyle(.sub)
                     .frame(width: 57)
                     .overlay(
                         Circle()
@@ -21,24 +24,28 @@ struct FavoriteList: View {
                     )
                 
                 Circle()
-                    .foregroundStyle(.azulList)
+                    .foregroundStyle(.sub)
                     .frame(width: 49)
             }
             
-            ZStack{ RoundedRectangle(cornerRadius: 30)
+            ZStack{
+                RoundedRectangle(cornerRadius: 30)
                     .frame(width: 230, height: 56)
-                    .foregroundStyle(.azulClaro)
+                    .foregroundStyle(.sub)
                     .overlay(
                         RoundedRectangle(cornerRadius: 30)
                             .stroke(Color.azulList, lineWidth: 1)
                     )
-                
+                Text("\(dimensaoConcreto)")
+                    .font(.system(size: 14, weight: .medium, design: .default))
+                    .foregroundColor(.azulEscuro)
                 
             }
         }
+        
     }
 }
 
 #Preview {
-    FavoriteList()
+    FavoriteList(dimensaoConcreto: 0)
 }

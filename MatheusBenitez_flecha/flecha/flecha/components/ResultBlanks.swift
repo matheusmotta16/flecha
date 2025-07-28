@@ -18,7 +18,7 @@ struct ResultBlanks: View {
             HStack () {
                 Text("\(tituloBlank)")
                     .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundStyle(.azulTitulo)
+                    .foregroundStyle(.azulTexto)
 //                    .frame(width: 40)
 //                    .border(.red)
                 Spacer()
@@ -33,7 +33,7 @@ struct ResultBlanks: View {
                     .frame(width: 115, height: 46)
                     .overlay(
                         RoundedRectangle(cornerRadius: 29)
-                            .stroke(Color.azul, lineWidth: 1)
+                            .stroke(Color.dataBlanks, lineWidth: 1)
                     )
                     
                 

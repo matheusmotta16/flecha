@@ -13,12 +13,12 @@ import SwiftUI
 class CoreDataViewModel: ObservableObject {
     @Published public var concretos: [Concreto] = []
     
-    public func getNotifications() {
+    public func getConcretos() {
         concretos = CoreDataModel.shared.fetchConcreto()
     }
     
-    public func createConcreto(secaoTransversal: Double, tensaoAdm: Double, fckUtilizado: Double){
-        let newConcreto: Concreto = CoreDataModel.shared.createConcreto(secaoTransversal: secaoTransversal, tensaoAdm: tensaoAdm, fckUtilizado: fckUtilizado)
+    public func createConcreto(secaoTransversal: Double, favorite: Bool){
+        let newConcreto: Concreto = CoreDataModel.shared.createConcreto(secaoTransversal: secaoTransversal, favorite: favorite)
         self.concretos.append(newConcreto)
     }
     

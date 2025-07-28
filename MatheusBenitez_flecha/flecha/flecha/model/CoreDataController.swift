@@ -19,7 +19,7 @@ class CoreDataModel {
     }
     
     private init() {
-        persistentContainer = NSPersistentContainer(name: "Model")
+        persistentContainer = NSPersistentContainer(name: "FlechaModel")
         persistentContainer.loadPersistentStores(completionHandler: { _,
             error in
             if let error = error {
@@ -51,14 +51,12 @@ class CoreDataModel {
         }
     }
     
-    public func createConcreto(secaoTransversal: Double, tensaoAdm: Double, fckUtilizado: Double) -> Concreto {
+    public func createConcreto(secaoTransversal: Double, favorite: Bool) -> Concreto {
         let concreto: Concreto =
         Concreto(context: viewContext)
         concreto.secaoTransversal = secaoTransversal
-        concreto.tensaoAdm = tensaoAdm
-        concreto.fckUtilizado = fckUtilizado
+        concreto.favorite = favorite
         saveContext()
-        
         return concreto
         
     }
