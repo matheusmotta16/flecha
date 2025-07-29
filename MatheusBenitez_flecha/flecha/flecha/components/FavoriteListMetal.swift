@@ -1,16 +1,15 @@
 //
-//  FavoriteList.swift
+//  FavoriteListMetal.swift
 //  flecha
 //
-//  Created by Matheus Motta on 16/07/25.
+//  Created by Matheus Motta on 29/07/25.
 //
 
-//TODO:
 import SwiftUI
 
-struct FavoriteList: View {
+struct FavoriteListMetal: View {
     
-    var dimensaoConcreto: Double
+    var vaoMetal: Double
     var body: some View {
         HStack{
             ZStack{
@@ -23,7 +22,7 @@ struct FavoriteList: View {
                             .stroke(Color.azulList, lineWidth: 1)
                     )
                 
-                Image("botaoConcreto1")
+                Image("botaoMetal")
                     .resizable()
                     .frame(width: 50, height: 50)
             }
@@ -36,7 +35,7 @@ struct FavoriteList: View {
                         RoundedRectangle(cornerRadius: 30)
                             .stroke(Color.azulList, lineWidth: 1)
                     )
-                Text("\(dimensaoConcreto, format: .number)")
+                Text("\(vaoMetal, format: .number)")
                     .font(.system(size: 14, weight: .medium, design: .default))
                     .foregroundColor(.azulEscuro)
                 
@@ -47,5 +46,5 @@ struct FavoriteList: View {
 }
 
 #Preview {
-    FavoriteList(dimensaoConcreto: 0)
+    FavoriteListMetal(vaoMetal: 0)
 }

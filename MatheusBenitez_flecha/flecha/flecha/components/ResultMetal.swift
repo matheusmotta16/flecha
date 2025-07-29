@@ -37,10 +37,10 @@ struct ResultMetal: View {
                 
                 HStack {
                     Text("\(resultMetal, format: .number)")
-                        .font(.system(size: 14, weight: .regular, design: .rounded))
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
                         .foregroundStyle(.dataName)
                     Text("\(numberBlanks)")
-                        .font(.system(size: 14, weight: .regular, design: .rounded))
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
                         .foregroundStyle(.accent)
                 }
                 

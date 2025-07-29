@@ -52,8 +52,7 @@ class CoreDataModel {
     }
     
     public func createConcreto(secaoTransversal: Double, favorite: Bool) -> Concreto {
-        let concreto: Concreto =
-        Concreto(context: viewContext)
+        let concreto: Concreto = Concreto(context: viewContext)
         concreto.secaoTransversal = secaoTransversal
         concreto.favorite = favorite
         saveContext()
@@ -63,6 +62,32 @@ class CoreDataModel {
     
     public func deleteConcreto(concreto: Concreto) {
         viewContext.delete(concreto)
+        saveContext()
+    }
+    
+    public func fetchMetal() -> [Metal] {
+        let fetchRequest: NSFetchRequest<Metal> = Metal.fetchRequest()
+        do {
+            let result = try  viewContext.fetch(fetchRequest)
+            return result
+        }
+        catch {
+            print("[WARNING]: Failed to fetch Concrete (\(error.localizedDescription))")
+            return []
+        }
+    }
+    
+    public func createMetal(vaoMetal: Double, favorite: Bool) -> Metal {
+        let metal: Metal = Metal(context: viewContext)
+        metal.vaoMetal = vaoMetal
+        metal.favorite = favorite
+        saveContext()
+        return metal
+        
+    }
+    
+    public func deleteMetal(metal: Metal) {
+        viewContext.delete(metal)
         saveContext()
     }
 }

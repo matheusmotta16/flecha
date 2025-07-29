@@ -22,20 +22,17 @@ struct ResultView1: View {
                     .ignoresSafeArea()
                 
                 
-                VStack {
+                VStack(spacing: 8) {
                     Text("Aqui está!")
                         .font(.system(size: 50, weight: .bold, design: .rounded))
                         .foregroundStyle(.azulTexto)
                     
-                    //                    Circle()
-                    //                        .frame(width: 245)
-                    //                        .padding(.bottom, 280)
-                    //                        .foregroundStyle(.calculusButton)
+               
                     Image("ResultConcreto")
                         .resizable()
                         .frame(width: 245, height: 245)
                     
-                }.padding(.bottom, 310)
+                }.padding(.bottom, 320)
                 
                 VStack (spacing: 20){
                     Text("Concreto")
@@ -54,7 +51,7 @@ struct ResultView1: View {
                     
                     HStack (spacing: 35){
                         NavigationLink{
-                            homePage(nomeTeste: "a")
+                            homePage(username: .constant(""))
                         } label:{
                             ResultButton()
                         }
@@ -67,7 +64,7 @@ struct ResultView1: View {
                             //                            favorite.toggle()
                             viewModel.createConcreto(secaoTransversal: dimensaoConcreto, favorite: true)
                             for concreto in viewModel.concretos{
-                                print("\(concreto.secaoTransversal) e favorito: \(concreto.favorite)")
+//                                print("\(concreto.secaoTransversal) e favorito: \(concreto.favorite)")
                             }
                             
                         })

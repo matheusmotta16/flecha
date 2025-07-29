@@ -12,7 +12,7 @@ struct ContentView: View {
     
     
     @State var username: String = ""
-    var nomeTeste = "nome"
+//    var nomeTeste = "nome"
     
     var body: some View {
         NavigationStack {
@@ -28,7 +28,7 @@ struct ContentView: View {
 //                        
 //                    }
 //                }
-                NameScreen(nomeTest: nomeTeste)
+                NameScreen(/*nomeTest: nomeTeste*/)
                 
                 
             }

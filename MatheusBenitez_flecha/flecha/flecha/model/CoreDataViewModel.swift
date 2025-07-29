@@ -12,6 +12,8 @@ import SwiftUI
 
 class CoreDataViewModel: ObservableObject {
     @Published public var concretos: [Concreto] = []
+    @Published public var  metais: [Metal] = []
+
     
     public func getConcretos() {
         concretos = CoreDataModel.shared.fetchConcreto()
@@ -25,4 +27,23 @@ class CoreDataViewModel: ObservableObject {
     public func deleteConcreto(concreto: Concreto) {
         CoreDataModel.shared.deleteConcreto(concreto: concreto)
     }
+    
+    
+    
+    
+    public func getMetais() {
+        metais = CoreDataModel.shared.fetchMetal()
+    }
+    
+    public func createMetal(vaoMetal: Double, favorite: Bool){
+        let newMetal: Metal = CoreDataModel.shared.createMetal(vaoMetal: vaoMetal, favorite: favorite)
+        self.metais.append(newMetal)
+    }
+    
+    public func deleteMetal(metal: Metal) {
+        CoreDataModel.shared.deleteMetal(metal: metal)
+    }
+    
+    
+    
 }

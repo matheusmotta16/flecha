@@ -12,7 +12,7 @@ struct NameScreen: View {
     @State var title = ""
     @State var name: String = ""
     @State var username: String = ""
-    var nomeTest: String
+//    var nomeTest: String
     
     var body: some View {
         NavigationStack{
@@ -20,7 +20,7 @@ struct NameScreen: View {
                 Image("BGNameScreen")
                     .resizable()
                     .ignoresSafeArea()
-                VStack(spacing: 160){
+                VStack(spacing: 130){
                     VStack {
                         Text("Olá \nprojetista!")
                             .font(.system(size: 60, weight: .bold, design: .rounded))
@@ -50,7 +50,9 @@ struct NameScreen: View {
                                 
                                 TextField("", text: $username)
                                     .padding(.leading, 60)
+                                    .padding(.top,190)
                                     .foregroundStyle(.azulEscuro)
+//                                    .border(.red)
                                     
                                     
                                 //
@@ -59,7 +61,7 @@ struct NameScreen: View {
                         
                         
                         NavigationLink {
-                            homePage(nomeTeste: "matheus")
+                            homePage(/*nomeTeste: "matheus"*/ username: $username)
                             .navigationBarBackButtonHidden()
                         }
                         label: {
@@ -85,5 +87,5 @@ struct NameScreen: View {
 
 
 #Preview {
-    NameScreen(nomeTest: "matheus")
+    NameScreen(/*nomeTest: "matheus"*/)
 }

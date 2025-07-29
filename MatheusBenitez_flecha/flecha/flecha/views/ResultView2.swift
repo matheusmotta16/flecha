@@ -16,6 +16,7 @@ import SwiftUI
 
 struct ResultView2: View {
     
+    @ObservedObject private var viewModel: CoreDataViewModel = CoreDataViewModel()
     @Binding var dimensaoVao: Double
     
     var body: some View {
@@ -40,7 +41,7 @@ struct ResultView2: View {
                     Image("ResultMetal")
                         .resizable()
                         .frame(width: 245, height: 245)
-                }.padding(.bottom, 310)
+                }.padding(.bottom, 320)
                 
                 VStack (spacing: 40){
                     Text("Metal")
@@ -55,7 +56,7 @@ struct ResultView2: View {
                     .padding(.horizontal, 40)
                     HStack (spacing: 35){
                         NavigationLink{
-                            homePage(nomeTeste: "matheus")
+                            homePage(username: .constant(""))
                         } label:{
                             ResultButton()
                         }
@@ -64,7 +65,13 @@ struct ResultView2: View {
                             FavoriteView()
                         } label:{
                             ResultFavoriteButton()
-                        }
+                        }.simultaneousGesture(TapGesture().onEnded {
+                            //                            favorite.toggle()
+                            viewModel.createMetal(vaoMetal: dimensaoVao, favorite: true)
+                            for metal in viewModel.metais{
+                            }
+                            
+                        })
                     }
                 }
             }
