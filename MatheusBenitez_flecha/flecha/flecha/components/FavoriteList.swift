@@ -36,10 +36,21 @@ struct FavoriteList: View {
                         RoundedRectangle(cornerRadius: 30)
                             .stroke(Color.azulList, lineWidth: 1)
                     )
-                Text("\(dimensaoConcreto, format: .number)")
-                    .font(.system(size: 14, weight: .medium, design: .default))
-                    .foregroundColor(.azulEscuro)
                 
+                VStack{
+                    HStack {
+                        Text("\(dimensaoConcreto, format: .number)")
+                            .font(.system(size: 14, weight: .medium, design: .default))
+                            .foregroundColor(.azulEscuro)
+                        Text(" ||  fck: 3.5 KN/ cm²")
+                            .font(.system(size: 14, weight: .medium, design: .default))
+                            .foregroundColor(.azulEscuro)
+                    }
+                    Text(" tensão adm: 2.125 KN/ cm²")
+                        .font(.system(size: 14, weight: .medium, design: .default))
+                        .foregroundColor(.azulEscuro)
+
+                }
             }
         }
         

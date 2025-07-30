@@ -26,8 +26,14 @@ struct NameField: View {
                     .padding(.leading, 240)
                 
                 RoundedRectangle(cornerRadius: 29)
+//                    .fill(Color.clear)
                     .frame(width: 328, height: 54)
                     .foregroundStyle(.colorNameView)
+                    .opacity(0.4)
+//                    .overlay(
+//                        RoundedRectangle(cornerRadius: 29)
+//                            .stroke(Color.azulList, lineWidth: 2)
+//                    )
                 
                 
             }

@@ -17,27 +17,54 @@ struct FavoriteView: View {
         NavigationView{
             ZStack{
                 ZStack{
-                    
-                    List{
+                    VStack{
                         
-                        ForEach(viewModel.concretos, id: \.self)
-                        { concreto in
-                            FavoriteList(dimensaoConcreto: concreto.secaoTransversal)
-                                .swipeActions(content: {
-                                    Button(role: .destructive) {
-                                        viewModel.deleteConcreto(concreto: concreto)
-                                        //            dismiss()
-                                    } label: {
-                                        VStack{
-                                            Image(systemName: "trash.circle.fill")
-                                                .foregroundStyle(.azulTexto)
-                                        }
-                                    }
-                                    .tint(.red)
-                                })
+                        
+                        List{
                             
-                        }
-                        }.background(Image("BGFavoriteView")
+                            ForEach(viewModel.concretos, id: \.self)
+                            { concreto in
+                                FavoriteList(dimensaoConcreto: concreto.secaoTransversal)
+                                    .swipeActions(content: {
+                                        Button(role: .destructive) {
+                                            viewModel.deleteConcreto(concreto: concreto)
+                                            //            dismiss()
+                                        } label: {
+                                            VStack{
+                                                Image(systemName: "trash.circle.fill")
+                                                    .foregroundStyle(.azulTexto)
+                                            }
+                                        }
+                                        .tint(.red)
+                                    })
+                                
+                            }
+                            
+                        } 
+                        
+                        
+//                        List{
+//                            
+//                            ForEach(viewModel.metais, id: \.self)
+//                            { concreto in
+//                                FavoriteListMetal(dimensaoVao: metal.dimensaoVao)
+//                                    .swipeActions(content: {
+//                                        Button(role: .destructive) {
+//                                            viewModel.deleteMetal(metal: metal)
+//                                            //            dismiss()
+//                                        } label: {
+//                                            VStack{
+//                                                Image(systemName: "trash.circle.fill")
+//                                                    .foregroundStyle(.azulTexto)
+//                                            }
+//                                        }
+//                                        .tint(.red)
+//                                    })
+//                                
+//                            }
+//                            
+//                        }
+                    }.background(Image("BGFavoriteView")
                                      
                             .resizable()
                             .ignoresSafeArea()
