@@ -10,7 +10,7 @@ import SwiftUI
 struct ResultView1: View {
     
     @ObservedObject private var viewModel: CoreDataViewModel = CoreDataViewModel()
-    
+    @Environment(\.dismiss) var dismiss
     @Binding var dimensaoConcreto: Double
     //    @State var favorite: Bool = false
     var body: some View {
@@ -50,11 +50,19 @@ struct ResultView1: View {
                     
                     
                     HStack (spacing: 35){
-                        NavigationLink{
-                            homePage(username: .constant(""))
-                        } label:{
+                        
+                        Button{
+                            dismiss()
+                            dismiss()
+                            
+                        } label: {
                             ResultButton()
                         }
+//                        NavigationLink{
+//                            homePage(username: .constant(""))
+//                        } label:{
+//                            ResultButton()
+//                        }
                         
                         NavigationLink{
                             FavoriteView()

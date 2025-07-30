@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "BGFavoriteScreen.jpg",
+      "filename" : "LaunchScreen.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "BGFavoriteView2.jpg",
+      "filename" : "LSDark.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

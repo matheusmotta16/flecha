@@ -16,7 +16,7 @@ struct MainButton: View {
             
             ZStack {
                 
-                VStack(spacing: 60){
+                VStack(spacing: 50){
                     
                     
                     

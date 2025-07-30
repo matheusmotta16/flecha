@@ -1,18 +1,18 @@
 //
-//  ResultMetal.swift
+//  ResultMetal2.swift
 //  flecha
 //
-//  Created by Matheus Motta on 28/07/25.
+//  Created by Matheus Motta on 30/07/25.
 //
 
 import SwiftUI
 
-struct ResultMetal: View {
-    
+struct ResultMetal2: View {
     var tituloBlank: String = ""
     var resultMetal: Double = 0.0
     var numberBlanks: String = ""
     var numeroVao: Double = 0
+    
     
     var body: some View {
         HStack (spacing: 42){
@@ -23,8 +23,8 @@ struct ResultMetal: View {
                 Spacer()
                 
             }
-                
-                
+            
+            
             
             ZStack {
                 Rectangle()
@@ -34,15 +34,14 @@ struct ResultMetal: View {
                         RoundedRectangle(cornerRadius: 29)
                             .stroke(Color.dataBlanks, lineWidth: 1)
                     )
-                    
+                
                 
                 HStack {
-                    Text("\(resultMetal, format: .number) cm")
+                    
+                    Text("\(numeroVao, format: .number) m")
                         .font(.system(size: 14, weight: .bold, design: .rounded))
                         .foregroundStyle(.dataName)
-                    Text("\(numberBlanks)")
-                        .font(.system(size: 14, weight: .bold, design: .rounded))
-                        .foregroundStyle(.accent)
+                        
                 }
                 
                 
@@ -52,6 +51,7 @@ struct ResultMetal: View {
     }
 }
 
+
 #Preview {
-    ResultMetal()
+    ResultMetal2()
 }

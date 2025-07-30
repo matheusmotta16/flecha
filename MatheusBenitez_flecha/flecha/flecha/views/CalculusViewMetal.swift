@@ -16,6 +16,7 @@ struct CalculusViewMetal: View {
     @State var areaDeInfluencia: Double = 0
     @State var numeroPavimento: Double = 0
     @State var dimensaoVao: Double = 0
+    @State var resultadoVao: Double = 0
     var body: some View {
         
         NavigationStack {
@@ -45,7 +46,7 @@ struct CalculusViewMetal: View {
                             
                             VStack{
                                 ZStack{
-                                    calculusBlanks(dado: "área de influência")
+                                    calculusBlanks(dado: "área de influência", unidadeMedida: "-m²-")
                                     TextField("", value: $areaDeInfluencia, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
@@ -55,7 +56,7 @@ struct CalculusViewMetal: View {
                                     
                                 }
                                 ZStack {
-                                    calculusBlanks(dado: "número de pavimentos")
+                                    calculusBlanks(dado: "número de pavimentos", unidadeMedida: "-u.m-")
                                     TextField("", value: $numeroPavimento, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
@@ -64,7 +65,7 @@ struct CalculusViewMetal: View {
                                         .keyboardType(.numberPad)
                                 }
                                 ZStack {
-                                    calculusBlanks(dado: "dimensão do vão")
+                                    calculusBlanks(dado: "dimensão do vão", unidadeMedida: "-m-")
                                     TextField("", value: $dimensaoVao, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
@@ -77,7 +78,7 @@ struct CalculusViewMetal: View {
                             
                             VStack{
                                 NavigationLink{
-                                    ResultView2(dimensaoVao:  $dimensaoVao)
+                                    ResultView2(dimensaoVao:  $dimensaoVao, resultadoVao: resultadoVao)
                                 }
                                 label: {
                                     calculusButton()
@@ -85,7 +86,7 @@ struct CalculusViewMetal: View {
                                 .simultaneousGesture(TapGesture().onEnded {
                                     let calculadora = metalCalculator(vaoMetal: dimensaoVao)
                                     let dimensao = calculadora.calcularMetal(vaoMetal: dimensaoVao)
-                                    dimensaoVao = calculadora.calcularMetal(vaoMetal: dimensaoVao)
+                                    resultadoVao = calculadora.calcularMetal(vaoMetal: dimensaoVao)
                                     
                                 })
                             }
@@ -93,7 +94,6 @@ struct CalculusViewMetal: View {
                         
                     }
                 }
-                .padding(.top, 50)
             }
         }
         

@@ -10,28 +10,34 @@ import SwiftUI
 struct ContentView: View {
     
     
-    
+    @State var loading: Bool = true
     @State var username: String = ""
-//    var nomeTeste = "nome"
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Image("BGMainScreen")
-                    .resizable()
-                    .ignoresSafeArea()
-//                VStack {
-//                    if !name.isEmpty {
-//
-//                            Text("Welcome \(name)!")
-//                            TextField("name", text: $name)
-//                        
-//                    }
-//                }
-                NameScreen(/*nomeTest: nomeTeste*/)
-                
-                
+        ZStack{
+            if loading {
+                launchView()
+                    .transition(.opacity)
+                    .zIndex(2)
+            } else{
+                NavigationStack {
+                    ZStack {
+                        Image("BGMainScreen")
+                            .resizable()
+                            .ignoresSafeArea()
+                        
+                        NameScreen()
+                    }
+                } .onAppear{
+                    NotificationManagerModel.requirePermissions()
+                }
             }
+        }.animation(.easeInOut(duration: 0.4), value: loading)
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                loading = false
+            }
+            
         }
     }
 }

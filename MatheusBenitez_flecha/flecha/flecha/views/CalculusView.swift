@@ -46,7 +46,7 @@ struct CalculusView: View {
                             
                             VStack{
                                 ZStack{
-                                    calculusBlanks(dado: "área de influência")
+                                    calculusBlanks(dado: "área de influência", unidadeMedida: "-m²-")
                                     TextField("", value: $areaDeInfluencia, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
@@ -56,7 +56,7 @@ struct CalculusView: View {
                                     
                                 }
                                 ZStack {
-                                    calculusBlanks(dado: "número de pavimentos")
+                                    calculusBlanks(dado: "número de pavimentos", unidadeMedida: "-U.M-")
                                     TextField("", value: $numeroPavimento, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
@@ -65,7 +65,7 @@ struct CalculusView: View {
                                         .keyboardType(.numberPad)
                                 }
                                 ZStack {
-                                    calculusBlanks(dado: "dimensão do vão")
+                                    calculusBlanks(dado: "dimensão do vão", unidadeMedida: "-m-")
                                     TextField("", value: $dimensaoVaoBlank, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
@@ -93,7 +93,7 @@ struct CalculusView: View {
                         
                     }
                 }
-                .padding(.top, 50)
+                
             }
         }
         

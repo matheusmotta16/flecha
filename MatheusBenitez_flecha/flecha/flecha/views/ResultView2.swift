@@ -18,6 +18,9 @@ struct ResultView2: View {
     
     @ObservedObject private var viewModel: CoreDataViewModel = CoreDataViewModel()
     @Binding var dimensaoVao: Double
+    @Environment(\.dismiss) var dismiss
+    let resultadoVao: Double
+    
     
     var body: some View {
         NavigationStack{
@@ -28,7 +31,7 @@ struct ResultView2: View {
                     .ignoresSafeArea()
                 
                 
-                VStack (spacing: 10){
+                VStack (spacing: 15){
                     Text("Aqui está!")
                         .font(.system(size: 50, weight: .bold, design: .rounded))
                         .foregroundStyle(.azulTexto)
@@ -50,13 +53,13 @@ struct ResultView2: View {
                         .padding(.top, 400)
                     
                     VStack (spacing: 18) {
-                        ResultMetal(tituloBlank: "altura máxima(viga)", resultMetal: dimensaoVao)
-                        ResultBlanks(tituloBlank: "vão máximo")
+                        ResultMetal(tituloBlank: "altura máxima(viga)", resultMetal: resultadoVao)
+                        ResultMetal2(tituloBlank: "vão máximo", numeroVao: dimensaoVao)
                     }
                     .padding(.horizontal, 40)
                     HStack (spacing: 35){
-                        NavigationLink{
-                            homePage(username: .constant(""))
+                        Button{
+                            dismiss()
                         } label:{
                             ResultButton()
                         }
@@ -81,5 +84,5 @@ struct ResultView2: View {
 }
 
 #Preview {
-    ResultView2(dimensaoVao: .constant(0))
+    ResultView2(dimensaoVao: .constant(0), resultadoVao: 100)
 }

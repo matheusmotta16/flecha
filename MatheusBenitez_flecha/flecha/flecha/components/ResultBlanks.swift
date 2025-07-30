@@ -11,7 +11,8 @@ struct ResultBlanks: View {
     
     var tituloBlank: String = ""
     var numberBlanks: String = ""
-    
+    var numeroVao: Double = 0
+   
     var body: some View {
         
         HStack (spacing: 42){
@@ -37,9 +38,12 @@ struct ResultBlanks: View {
                     )
                     
                 
-                Text("\(numberBlanks)")
-                    .font(.system(size: 14, weight: .bold, design: .rounded))
-                    .foregroundStyle(.accent)
+                HStack {
+                    Text("\(numberBlanks)")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(.accent)
+                    
+                }
                 
                 
                 

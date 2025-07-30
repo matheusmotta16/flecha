@@ -37,24 +37,6 @@ struct FavoriteView: View {
                                 })
                             
                         }
-                        
-                        
-                        ForEach(viewModel.metais, id: \.self)
-                        { metal in
-                            FavoriteListMetal(vaoMetal: metal.dimensaoVao)
-                                .swipeActions(content: {
-                                    Button(role: .destructive) {
-                                        viewModel.deleteMetal(metal: metal)
-                                        //            dismiss()
-                                    } label: {
-                                        VStack{
-                                            Image(systemName: "trash.circle.fill")
-                                                .foregroundStyle(.azulTexto)
-                                        }
-                                    }
-                                    .tint(.red)
-                                })
-                        }
                         }.background(Image("BGFavoriteView")
                                      
                             .resizable()

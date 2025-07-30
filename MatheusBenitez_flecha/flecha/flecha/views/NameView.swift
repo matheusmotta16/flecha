@@ -12,7 +12,7 @@ struct NameScreen: View {
     @State var title = ""
     @State var name: String = ""
     @State var username: String = ""
-//    var nomeTest: String
+    @State private var didSendNotification: Bool = false
     
     var body: some View {
         NavigationStack{
@@ -35,7 +35,7 @@ struct NameScreen: View {
                     
                     VStack{
                         
-                            
+                        
                         
                         VStack(spacing: 26){
                             ZStack {
@@ -52,30 +52,35 @@ struct NameScreen: View {
                                     .padding(.leading, 60)
                                     .padding(.top,190)
                                     .foregroundStyle(.azulEscuro)
-//                                    .border(.red)
-                                    
-                                    
+                                //                                    .border(.red)
+                                
+                                
                                 //
                                 
                             }
-                        
-                        
-                        NavigationLink {
-                            homePage(/*nomeTeste: "matheus"*/ username: $username)
-                            .navigationBarBackButtonHidden()
-                        }
-                        label: {
-                            ZStack {
-                                
-                                RoundedRectangle(cornerRadius: 29)
-                                    .frame(width: 328, height: 54)
-                                    .foregroundStyle(.colorNameView)
-                                Text("continuar")
-                                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                                    .foregroundStyle(.azulTitulo)
+                            
+                            
+                            NavigationLink {
+                                homePage(username: $username)
+                                    .navigationBarBackButtonHidden()
                             }
-                        }
-                        
+                            label: {
+                                ZStack {
+                                    
+                                    RoundedRectangle(cornerRadius: 29)
+                                        .frame(width: 328, height: 54)
+                                        .foregroundStyle(.colorNameView)
+                                    Text("continuar")
+                                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                                        .foregroundStyle(.azulTitulo)
+                                } .simultaneousGesture(TapGesture().onEnded {
+                                    let notification: NotificationModel = NotificationModel(title: "flecha", subtitle: "Olá projetista! Como está?", body: "Não se esqueça que o flecha pode te ajudar!")
+                                    NotificationManagerModel.scheduleRepeatingNotification(notification: notification, hour: 13, minute: 30, interval: 259200)
+                                    
+                                    didSendNotification = true
+                                })
+                            }
+                            
                             
                         }
                     }
