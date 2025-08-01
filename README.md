@@ -1,4 +1,4 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=D3E4FF&height=240&section=header&text=flecha%20HIG%20&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=40&desc=facilitando%20a%20vida%20dos%20projetistas%20!&descAlignY=60&descSize=18">
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=D3E4FF&height=240&section=header&text=flecha%20&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=40&desc=facilitando%20a%20vida%20dos%20projetistas%20!&descAlignY=60&descSize=18">
 
 ## 🔍 Sobre o Projeto
 
