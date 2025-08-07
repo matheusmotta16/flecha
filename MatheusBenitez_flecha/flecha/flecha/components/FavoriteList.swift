@@ -22,7 +22,6 @@ struct FavoriteList: View {
                         Circle()
                             .stroke(Color.azulList, lineWidth: 1)
                     )
-                
                 Image("botaoConcreto1")
                     .resizable()
                     .frame(width: 50, height: 50)
@@ -40,20 +39,18 @@ struct FavoriteList: View {
                 VStack{
                     HStack {
                         Text("\(dimensaoConcreto, format: .number)")
-                            .font(.system(size: 14, weight: .medium, design: .default))
-                            .foregroundColor(.azulEscuro)
+                            .font(.system(size: 14, weight: .medium, design: .rounded))
+                            .foregroundColor(.azulTexto)
                         Text(" ||  fck: 3.5 KN/ cm²")
-                            .font(.system(size: 14, weight: .medium, design: .default))
-                            .foregroundColor(.azulEscuro)
+                            .font(.system(size: 14, weight: .medium, design: .rounded))
+                            .foregroundColor(.azulTexto)
                     }
                     Text(" tensão adm: 2.125 KN/ cm²")
-                        .font(.system(size: 14, weight: .medium, design: .default))
-                        .foregroundColor(.azulEscuro)
-
+                        .font(.system(size: 14, weight: .medium, design: .rounded))
+                        .foregroundColor(.azulTexto)
                 }
             }
         }
-        
     }
 }
 

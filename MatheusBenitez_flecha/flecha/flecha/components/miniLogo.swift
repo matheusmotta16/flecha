@@ -10,25 +10,16 @@ import SwiftUI
 struct miniLogo: View {
     var body: some View {
         
-            ZStack {
-                
-                Circle()
-                    .frame(width: 40)
-                    .foregroundStyle(.accent)
-                    .opacity(0.1)
-                
-                Image("miniLogo")
-                    .resizable()
-                    .frame(width: 20, height: 30)
-                
-            }
+        ZStack {
             
-            
-        
-//        .padding(.trailing, 300)
-//        .padding(.bottom, 700)
-//        
-        
+            Circle()
+                .frame(width: 40)
+                .foregroundStyle(.accent)
+                .opacity(0.1)
+            Image("miniLogo")
+                .resizable()
+                .frame(width: 20, height: 30)
+        }
     }
 }
 

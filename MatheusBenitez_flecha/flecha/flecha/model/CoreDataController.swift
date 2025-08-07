@@ -77,10 +77,11 @@ class CoreDataModel {
         }
     }
     
-    public func createMetal(vaoMetal: Double, favorite: Bool) -> Metal {
+    public func createMetal(vaoMetal: Double, favorite: Bool, resultadoVao: Double) -> Metal {
         let metal: Metal = Metal(context: viewContext)
         metal.vaoMetal = vaoMetal
         metal.favorite = favorite
+        metal.resultadoVao = resultadoVao
         saveContext()
         return metal
         

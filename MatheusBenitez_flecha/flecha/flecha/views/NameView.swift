@@ -20,6 +20,7 @@ struct NameScreen: View {
                 Image("BGNameScreen")
                     .resizable()
                     .ignoresSafeArea()
+                
                 VStack(spacing: 130){
                     VStack {
                         Text("Olá \nprojetista!")
@@ -34,31 +35,14 @@ struct NameScreen: View {
                     }
                     
                     VStack{
-                        
-                        
-                        
                         VStack(spacing: 26){
                             ZStack {
-                                
                                 NameField()
-                                
-                                
-                                //                                VStack{
-                                //                                    if !username.isEmpty {
-                                //                                    MainButton(username: $username)
-                                //                            }
-                                
                                 TextField("", text: $username)
                                     .padding(.leading, 60)
                                     .padding(.top,190)
                                     .foregroundStyle(.azulEscuro)
-                                //                                    .border(.red)
-                                
-                                
-                                //
-                                
                             }
-                            
                             
                             NavigationLink {
                                 homePage(username: $username)
@@ -80,8 +64,6 @@ struct NameScreen: View {
                                     didSendNotification = true
                                 })
                             }
-                            
-                            
                         }
                     }
                 }
@@ -92,5 +74,5 @@ struct NameScreen: View {
 
 
 #Preview {
-    NameScreen(/*nomeTest: "matheus"*/)
+    NameScreen()
 }

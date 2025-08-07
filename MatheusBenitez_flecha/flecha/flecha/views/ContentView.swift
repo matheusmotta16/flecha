@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    
     @State var loading: Bool = true
     @State var username: String = ""
     
@@ -25,7 +24,6 @@ struct ContentView: View {
                         Image("BGMainScreen")
                             .resizable()
                             .ignoresSafeArea()
-                        
                         NameScreen()
                     }
                 } .onAppear{
@@ -37,7 +35,6 @@ struct ContentView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 loading = false
             }
-            
         }
     }
 }

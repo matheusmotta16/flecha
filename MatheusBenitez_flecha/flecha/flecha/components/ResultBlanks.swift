@@ -20,14 +20,9 @@ struct ResultBlanks: View {
                 Text("\(tituloBlank)")
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(.azulTexto)
-//                    .frame(width: 40)
-//                    .border(.red)
                 Spacer()
-                
             }
                 
-                
-            
             ZStack {
                 Rectangle()
                     .fill(.clear)
@@ -37,19 +32,13 @@ struct ResultBlanks: View {
                             .stroke(Color.dataBlanks, lineWidth: 1)
                     )
                     
-                
                 HStack {
                     Text("\(numberBlanks)")
                         .font(.system(size: 14, weight: .bold, design: .rounded))
                         .foregroundStyle(.accent)
-                    
                 }
-                
-                
-                
             }
         }
-        
     }
 }
 

@@ -6,6 +6,7 @@
     </entity>
     <entity name="Metal" representedClassName="Metal" syncable="YES" codeGenerationType="class">
         <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="resultadoVao" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="vaoMetal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="ScheduledNotification" representedClassName="ScheduledNotification" syncable="YES" codeGenerationType="class">

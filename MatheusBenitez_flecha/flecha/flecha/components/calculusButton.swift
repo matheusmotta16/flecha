@@ -20,11 +20,9 @@ struct calculusButton: View {
                 .resizable()
                 .frame(width: 80 , height: 80)
                 .foregroundStyle(.azulEscuro)
-            
         }
     }
 }
-
 
 #Preview {
     calculusButton()

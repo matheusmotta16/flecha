@@ -12,10 +12,6 @@ struct brushButton: View {
         
         Image(systemName: "heart.text.square")
         
-//            .padding(.leading, 320)
-//            .padding(.bottom, 700)
-//            
-        
     }
 }
 #Preview {

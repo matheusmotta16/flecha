@@ -11,10 +11,9 @@ struct homePage: View {
     
     @Environment(\.dismiss) var dismiss
     @Binding var username: String
-//    var nomeTeste: String
+
     var body: some View {
         NavigationStack{
-            
             ZStack{
                 
                 Image("BGMainScreen")
@@ -32,13 +31,9 @@ struct homePage: View {
                                     .fixedSize(horizontal: true, vertical: false)
                                 
                                 Text("\(username)!")
-    //                                .frame(width: 15, height: 10)
-                                    .padding(/*.trailing, 130*/)
+                                    .padding()
                                     .foregroundStyle(.dataBlanks)
                                     .font(.system(size: 20, weight: .bold, design: .rounded))
-    //                                .padding(.bottom, 106)
-//                                    .lineLimit(1)
-//                                    .fixedSize(horizontal: true, vertical: false)
                                 Spacer()
                             }.padding(.horizontal, 50)
                                 
@@ -47,20 +42,14 @@ struct homePage: View {
                                 .padding(.trailing, 95)
                                 .foregroundStyle(.azulTexto)
                         }
-                            
-                      
                     }
-                    
-                    
                     MainButton()
                     Spacer()
                 }
-                    
             }
             .toolbar{
                 ToolbarItem(placement: . cancellationAction) {
                     Button  {
-                        
                         dismiss()
                     } label: {
                         miniLogo()
@@ -72,7 +61,6 @@ struct homePage: View {
                     } label: {
                         brushButton()
                     }
-                    
                 }
             }
         }
@@ -80,5 +68,5 @@ struct homePage: View {
 }
 
 #Preview {
-    homePage(/*nomeTeste: "matheus"*/ username: .constant(""))
+    homePage(username: .constant(""))
 }

@@ -16,7 +16,7 @@ struct CalculusView: View {
     @State var areaDeInfluencia: Double = 0
     @State var numeroPavimento: Double = 0
     @State var dimensaoVaoBlank: Double = 0
-    @State var dimensaoConcreto: Double = 0
+    @State var dimensaoConcreto: Double = round(0)
     
     var body: some View {
         
@@ -35,11 +35,9 @@ struct CalculusView: View {
                                 .foregroundStyle(.azulTexto)
                                 .bold()
                             
-                            Text("preecnha os espaços com \n     os dados desejados")
+                            Text("preencha os espaços com \n     os dados desejados")
                                 .foregroundStyle(.sub)
                                 .bold()
-                            
-                            
                         }
                         ScrollView {
                         VStack (spacing: 40){
@@ -50,17 +48,14 @@ struct CalculusView: View {
                                     TextField("", value: $areaDeInfluencia, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
-                                    //                                .border(.red)
                                         .foregroundStyle(.calculus)
                                         .keyboardType(.numberPad)
-                                    
                                 }
                                 ZStack {
                                     calculusBlanks(dado: "número de pavimentos", unidadeMedida: "-U.M-")
                                     TextField("", value: $numeroPavimento, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
-                                    //                                .border(.red)
                                         .foregroundStyle(.calculus)
                                         .keyboardType(.numberPad)
                                 }
@@ -69,17 +64,14 @@ struct CalculusView: View {
                                     TextField("", value: $dimensaoVaoBlank, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
-                                    //                                .border(.red)
                                         .foregroundStyle(.calculus)
                                         .keyboardType(.numberPad)
                                 }
                             }
                             
-                            
                             VStack{
                                 NavigationLink{
                                     ResultView1(dimensaoConcreto: $dimensaoConcreto)
-                                        
                                 }
                                 label: {
                                     calculusButton()
@@ -90,13 +82,10 @@ struct CalculusView: View {
                                 })
                             }
                         }
-                        
                     }
                 }
-                
             }
         }
-        
     }
 }
 

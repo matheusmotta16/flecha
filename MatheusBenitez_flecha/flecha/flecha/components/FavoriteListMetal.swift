@@ -21,7 +21,6 @@ struct FavoriteListMetal: View {
                         Circle()
                             .stroke(Color.azulList, lineWidth: 1)
                     )
-                
                 Image("botaoMetal")
                     .resizable()
                     .frame(width: 50, height: 50)
@@ -35,13 +34,12 @@ struct FavoriteListMetal: View {
                         RoundedRectangle(cornerRadius: 30)
                             .stroke(Color.azulList, lineWidth: 1)
                     )
-                Text("\(vaoMetal, format: .number)")
-                    .font(.system(size: 14, weight: .medium, design: .default))
-                    .foregroundColor(.azulEscuro)
-                
+                Text("Seção : \(vaoMetal, format: .number) cm")
+                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                    .foregroundColor(.azulTexto)
+                    .padding(.trailing, 100)
             }
         }
-        
     }
 }
 

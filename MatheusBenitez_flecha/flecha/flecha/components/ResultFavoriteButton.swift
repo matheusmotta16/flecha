@@ -20,7 +20,6 @@ struct ResultFavoriteButton: View {
                 .frame(width: 25, height: 24)
                 .foregroundStyle(.azulTexto)
         }
-
     }
 }
 

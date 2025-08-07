@@ -21,11 +21,7 @@ struct ResultMetal2: View {
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(.azulTexto)
                 Spacer()
-                
             }
-            
-            
-            
             ZStack {
                 Rectangle()
                     .fill(.clear)
@@ -34,18 +30,12 @@ struct ResultMetal2: View {
                         RoundedRectangle(cornerRadius: 29)
                             .stroke(Color.dataBlanks, lineWidth: 1)
                     )
-                
-                
                 HStack {
                     
-                    Text("\(numeroVao, format: .number) m")
+                    Text("\(numeroVao, format: .number) cm")
                         .font(.system(size: 14, weight: .bold, design: .rounded))
                         .foregroundStyle(.dataName)
-                        
                 }
-                
-                
-                
             }
         }
     }

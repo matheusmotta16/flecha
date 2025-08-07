@@ -35,11 +35,9 @@ struct CalculusViewMetal: View {
                                 .foregroundStyle(.azulTexto)
                                 .bold()
                             
-                            Text("preecnha os espaços com \n     os dados desejados")
+                            Text("preencha os espaços com \n     os dados desejados")
                                 .foregroundStyle(.sub)
                                 .bold()
-                            
-                            
                         }
                         
                         VStack (spacing: 40){
@@ -50,31 +48,26 @@ struct CalculusViewMetal: View {
                                     TextField("", value: $areaDeInfluencia, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
-                                    //                                .border(.red)
                                         .foregroundStyle(.calculus)
                                         .keyboardType(.numberPad)
-                                    
                                 }
                                 ZStack {
                                     calculusBlanks(dado: "número de pavimentos", unidadeMedida: "-u.m-")
                                     TextField("", value: $numeroPavimento, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
-                                    //                                .border(.red)
                                         .foregroundStyle(.calculus)
                                         .keyboardType(.numberPad)
                                 }
                                 ZStack {
-                                    calculusBlanks(dado: "dimensão do vão", unidadeMedida: "-m-")
+                                    calculusBlanks(dado: "dimensão do vão", unidadeMedida: "-cm-")
                                     TextField("", value: $dimensaoVao, format: .number)
                                         .padding(.leading, 80)
                                         .padding(.top, 50)
-                                    //                                .border(.red)
                                         .foregroundStyle(.calculus)
                                         .keyboardType(.numberPad)
                                 }
                             }
-                            
                             
                             VStack{
                                 NavigationLink{
@@ -91,12 +84,10 @@ struct CalculusViewMetal: View {
                                 })
                             }
                         }
-                        
                     }
                 }
             }
         }
-        
     }
 }
 

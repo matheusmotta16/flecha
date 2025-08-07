@@ -13,80 +13,75 @@ struct FavoriteView: View {
     
     @ObservedObject private var viewModel: CoreDataViewModel = CoreDataViewModel()
     @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationView{
             ZStack{
-                ZStack{
-                                            
-                        
-                    List{
-                        
-                        ForEach(viewModel.concretos, id: \.self)
-                        { concreto in
-                            FavoriteList(dimensaoConcreto: concreto.secaoTransversal)
-                                .swipeActions(content: {
-                                    Button(role: .destructive) {
-                                        viewModel.deleteConcreto(concreto: concreto)
-                                        //            dismiss()
-                                    } label: {
-                                        VStack{
-                                            Image(systemName: "trash.circle.fill")
-                                                .foregroundStyle(.azulTexto)
-                                        }
-                                    }
-                                    .tint(.red)
-                                })
-                            
-                            
-                            
-                        }
+                VStack{
                     
-                        
-//                        List{
-//                            
-//                            ForEach(viewModel.metais, id: \.self)
-//                            { concreto in
-//                                FavoriteListMetal(dimensaoVao: metal.vaoMetal)
-//                                    .swipeActions(content: {
-//                                        Button(role: .destructive) {
-//                                            viewModel.deleteMetal(metal: metal)
-//                                            //            dismiss()
-//                                        } label: {
-//                                            VStack{
-//                                                Image(systemName: "trash.circle.fill")
-//                                                    .foregroundStyle(.azulTexto)
-//                                            }
-//                                        }
-//                                        .tint(.red)
-//                                    })
-//                                
-//                            }
-//                            
-//                        }
-                    }.background(Image("BGFavoriteView")
-                                     
-                            .resizable()
-                            .ignoresSafeArea()
-                            .toolbar{
-                                ToolbarItem(placement: .topBarTrailing){
-                                    Text("Favoritos")
-                                        .font(.system(size: 45.0, weight: .bold, design: .rounded))
-                                        .foregroundStyle(.azulTexto)
-                                        .padding(.trailing, 150)
-                                }
-                            })
-                        .scrollContentBackground(.hidden)
-                        
-                        
+                    List{
+                        Section(header: Text("Concreto")) {
+                            
+                            ForEach(viewModel.concretos, id: \.self)
+                            { concreto in
+                                FavoriteList(dimensaoConcreto: concreto.secaoTransversal)
+                                    .swipeActions(content: {
+                                        Button(role: .destructive) {
+                                            viewModel.deleteConcreto(concreto: concreto)
+                                        } label: {
+                                            VStack{
+                                                Image(systemName: "trash.circle.fill")
+                                                    .foregroundStyle(.azulTexto)
+                                            }
+                                        }
+                                        .tint(.accentColor)
+                                    })
+                            }
+                        } .headerProminence(.increased)
+                        Section(header: Text("Metal")) {
+                            
+                            ForEach(viewModel.metais, id: \.self)
+                            { metal in
+                                
+                                FavoriteListMetal(vaoMetal: metal.resultadoVao)
+                                    .swipeActions(content: {
+                                        Button(role: .destructive) {
+                                            viewModel.deleteMetal(metal: metal)
+                                            
+                                        } label: {
+                                            VStack{
+                                                Image(systemName: "trash.circle.fill")
+                                                    .foregroundStyle(.azulTexto)
+                                            }
+                                        }
+                                        .tint(.accentColor)
+                                    })
+                            }
+                        }
                     }
-                    .onAppear{
-                        viewModel.getConcretos()
-                    }
+                    .listRowBackground(Color.clear)
+                    .listStyle(.insetGrouped)
+                    .background(Image("BGFavoriteView")
+                        .resizable()
+                        .ignoresSafeArea()
+                        .toolbar{
+                            ToolbarItem(placement: .topBarTrailing){
+                                Text("Favoritos")
+                                    .font(.system(size: 45.0, weight: .bold, design: .rounded))
+                                    .foregroundStyle(.azulTexto)
+                                    .padding(.trailing, 150)
+                            }
+                        })
+                    .scrollContentBackground(.hidden)
+                }
+                .onAppear{
+                    viewModel.getConcretos()
+                    viewModel.getMetais()
                 }
             }
-            
         }
     }
+}
 
 #Preview {
     FavoriteView()

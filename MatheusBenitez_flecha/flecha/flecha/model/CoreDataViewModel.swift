@@ -35,8 +35,8 @@ class CoreDataViewModel: ObservableObject {
         metais = CoreDataModel.shared.fetchMetal()
     }
     
-    public func createMetal(vaoMetal: Double, favorite: Bool){
-        let newMetal: Metal = CoreDataModel.shared.createMetal(vaoMetal: vaoMetal, favorite: favorite)
+    public func createMetal(vaoMetal: Double, favorite: Bool, resultadoVao: Double){
+        let newMetal: Metal = CoreDataModel.shared.createMetal(vaoMetal: vaoMetal, favorite: favorite, resultadoVao: resultadoVao)
         self.metais.append(newMetal)
     }
     

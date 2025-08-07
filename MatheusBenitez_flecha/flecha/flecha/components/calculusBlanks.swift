@@ -14,16 +14,10 @@ struct calculusBlanks: View {
     var body: some View {
         
         VStack (alignment: .leading, spacing: 2){
-            
-            
-
-                Text("\(dado)")
-                    .foregroundStyle(.azulTexto)
-                    .padding()
-                    .bold()
-                    
-            
-            
+            Text("\(dado)")
+                .foregroundStyle(.azulTexto)
+                .padding()
+                .bold()
             ZStack {
                 Rectangle()
                     .fill(.clear)

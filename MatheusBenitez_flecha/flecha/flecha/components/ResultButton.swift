@@ -20,7 +20,6 @@ struct ResultButton: View {
                 .foregroundStyle(.azulTexto)
                 .bold()
         }
-
     }
 }
 

@@ -21,26 +21,18 @@ struct ResultView2: View {
     @Environment(\.dismiss) var dismiss
     let resultadoVao: Double
     
-    
     var body: some View {
         NavigationStack{
-           
+            
             ZStack{
                 Image("BGResultScreen")
                     .resizable()
                     .ignoresSafeArea()
                 
-                
                 VStack (spacing: 15){
                     Text("Aqui está!")
                         .font(.system(size: 50, weight: .bold, design: .rounded))
                         .foregroundStyle(.azulTexto)
-                    
-//                    Circle()
-//                        .frame(width: 245)
-//                        .padding(.bottom, 280)
-//                        .foregroundStyle(.calculusButton)
-                    
                     Image("ResultMetal")
                         .resizable()
                         .frame(width: 245, height: 245)
@@ -70,16 +62,14 @@ struct ResultView2: View {
                             ResultFavoriteButton()
                         }.simultaneousGesture(TapGesture().onEnded {
                             //                            favorite.toggle()
-                            viewModel.createMetal(vaoMetal: dimensaoVao, favorite: true)
+                            viewModel.createMetal(vaoMetal: dimensaoVao, favorite: true, resultadoVao: resultadoVao)
                             for metal in viewModel.metais{
                             }
-                            
                         })
                     }
                 }
             }
         }
-        
     }
 }
 

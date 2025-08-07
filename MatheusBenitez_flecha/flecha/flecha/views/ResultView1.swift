@@ -12,7 +12,7 @@ struct ResultView1: View {
     @ObservedObject private var viewModel: CoreDataViewModel = CoreDataViewModel()
     @Environment(\.dismiss) var dismiss
     @Binding var dimensaoConcreto: Double
-    //    @State var favorite: Bool = false
+    
     var body: some View {
         NavigationStack{
             
@@ -21,17 +21,14 @@ struct ResultView1: View {
                     .resizable()
                     .ignoresSafeArea()
                 
-                
                 VStack(spacing: 8) {
                     Text("Aqui está!")
                         .font(.system(size: 50, weight: .bold, design: .rounded))
                         .foregroundStyle(.azulTexto)
                     
-               
                     Image("ResultConcreto")
                         .resizable()
                         .frame(width: 245, height: 245)
-                    
                 }.padding(.bottom, 320)
                 
                 VStack (spacing: 20){
@@ -48,7 +45,6 @@ struct ResultView1: View {
                     }
                     .padding(.horizontal, 40)
                     
-                    
                     HStack (spacing: 35){
                         
                         Button{
@@ -58,33 +54,23 @@ struct ResultView1: View {
                         } label: {
                             ResultButton()
                         }
-//                        NavigationLink{
-//                            homePage(username: .constant(""))
-//                        } label:{
-//                            ResultButton()
-//                        }
                         
                         NavigationLink{
                             FavoriteView()
                         } label:{
                             ResultFavoriteButton()
-                        }  .simultaneousGesture(TapGesture().onEnded {
-                            //                            favorite.toggle()
+                        }
+                        .simultaneousGesture(TapGesture().onEnded {
                             viewModel.createConcreto(secaoTransversal: dimensaoConcreto, favorite: true)
                             for concreto in viewModel.concretos{
-//                                print("\(concreto.secaoTransversal) e favorito: \(concreto.favorite)")
                             }
-                            
                         })
                     }
                 }
             }
-
         }
     }
 }
-
-
 
 #Preview {
     ResultView1(dimensaoConcreto:.constant(0))
