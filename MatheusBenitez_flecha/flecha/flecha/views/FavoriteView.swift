@@ -38,6 +38,7 @@ struct FavoriteView: View {
                                     })
                             }
                         } .headerProminence(.increased)
+                        
                         Section(header: Text("Metal")) {
                             
                             ForEach(viewModel.metais, id: \.self)
@@ -63,6 +64,7 @@ struct FavoriteView: View {
                     .listStyle(.insetGrouped)
                     .background(Image("BGFavoriteView")
                         .resizable()
+                        .opacity(0.6)
                         .ignoresSafeArea()
                         .toolbar{
                             ToolbarItem(placement: .topBarTrailing){

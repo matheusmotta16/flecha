@@ -14,12 +14,16 @@ struct NameScreen: View {
     @State var username: String = ""
     @State private var didSendNotification: Bool = false
     
+    
     var body: some View {
         NavigationStack{
             ZStack {
+               
+//                GifImage("flechaFundoCerto")
                 Image("BGNameScreen")
                     .resizable()
                     .ignoresSafeArea()
+                  
                 
                 VStack(spacing: 130){
                     VStack {
@@ -38,9 +42,10 @@ struct NameScreen: View {
                         VStack(spacing: 26){
                             ZStack {
                                 NameField()
+//                                    .padding(.top,178)
                                 TextField("", text: $username)
                                     .padding(.leading, 60)
-                                    .padding(.top,190)
+                                    .padding(.top,180)
                                     .foregroundStyle(.azulEscuro)
                             }
                             

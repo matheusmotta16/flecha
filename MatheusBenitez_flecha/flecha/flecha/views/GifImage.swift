@@ -33,6 +33,6 @@ struct GifImage: UIViewRepresentable {
 }
 
 #Preview {
-    GifImage("GIFFLECHAFINAL")
+    GifImage("flechaFundoCerto")
 }
 
